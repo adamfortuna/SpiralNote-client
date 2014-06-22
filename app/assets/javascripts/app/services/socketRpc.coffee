@@ -8,8 +8,8 @@ angular.module('fullStackClass').factory 'FSCSocketRpc', ($q)->
   callFunction: (socket, fName, args)=>
     deferred = $q.defer()
     funcId = rpcId += 1
-    socket.emit("function:call", {function: fName, functionArgs: args, id: funcId})
-    socket.once "#{fName}:result:#{funcId}", (result)->
+    socket.emit("rpc:function:call", {function: fName, functionArgs: args, id: funcId})
+    socket.once "rpc:#{fName}:result:#{funcId}", (result)->
       deferred.resolve(result)
     
     deferred.promise
