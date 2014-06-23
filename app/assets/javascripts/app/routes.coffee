@@ -7,4 +7,3 @@ angular.module('fullStackClass').config ($stateProvider, $urlRouterProvider, $lo
       templateUrl: "assets/app/templates/index.html"
       controller: (FSCSocket)->
         FSCSocket.establishConnection()
-        debugger

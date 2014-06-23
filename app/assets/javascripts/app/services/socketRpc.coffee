@@ -10,6 +10,9 @@ angular.module('fullStackClass').factory 'FSCSocketRpc', ($q)->
     funcId = rpcId += 1
     socket.emit("rpc:function:call", {function: fName, functionArgs: args, id: funcId})
     socket.once "rpc:#{fName}:result:#{funcId}", (result)->
-      deferred.resolve(result)
+      if result.error
+        deferred.reject(result)
+      else
+        deferred.resolve(result)
     
     deferred.promise

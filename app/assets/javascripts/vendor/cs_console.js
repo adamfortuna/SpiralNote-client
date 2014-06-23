@@ -420,7 +420,8 @@ THE SOFTWARE.
     }
 
     CSConsole.prototype.setValue = function(value) {
-      return this.console.setLine(this.lineNumber(), "" + this.options.prompt + value);
+      return this.console.replaceRange("" + this.options.prompt + value, {line: this.lineNumber(), ch: 0}, {line: this.currentLine - 1, ch: this.console.getLine(this.currentLine - 1).length})
+      // return this.console.setLine(this.lineNumber(), "" + this.options.prompt + value);
     };
 
     CSConsole.prototype.getValue = function() {
@@ -428,7 +429,8 @@ THE SOFTWARE.
     };
 
     CSConsole.prototype.setPrompt = function(prompt) {
-      this.console.setLine(this.currentLine, this.console.getLine(this.currentLine).replace(new RegExp(this.options.prompt), prompt));
+      this.console.replaceRange(this.console.getLine(this.currentLine).replace(new RegExp(this.options.prompt), prompt), {line: this.currentLine, ch: 0}, {line: this.currentLine - 1, ch: this.console.getLine(this.currentLine - 1).length})
+      // this.console.setLine(this.currentLine, this.console.getLine(this.currentLine).replace(new RegExp(this.options.prompt), prompt));
       return this.options.prompt = prompt;
     };
 
@@ -437,7 +439,8 @@ THE SOFTWARE.
     };
 
     CSConsole.prototype.appendToInput = function(value) {
-      return this.console.setLine(this.lineNumber(), "" + (this.console.getLine(this.lineNumber())) + value);
+      return this.console.replaceRange("" + (this.console.getLine(this.lineNumber())) + value, {line: this.lineNumber(), ch: 0}, {line: this.currentLine - 1, ch: this.console.getLine(this.currentLine - 1).length});
+      // return this.console.setLine(this.lineNumber(), "" + (this.console.getLine(this.lineNumber())) + value);
     };
 
     CSConsole.prototype.getAllInput = function() {
@@ -625,7 +628,8 @@ THE SOFTWARE.
 
     CSConsole.prototype.nonReactingNewline = function() {
       this.currentLine = this.lineNumber();
-      return this.console.setLine(this.currentLine, "" + (this.inputLine()) + "\n");
+      return this.console.replaceRange( "" + (this.inputLine()) + "\n", {line: this.currentLine, ch: 0}, {line: this.currentLine - 1, ch: this.console.getLine(this.currentLine - 1).length});
+      // return this.console.setLine(this.currentLine, "" + (this.inputLine()) + "\n");
     };
 
     CSConsole.prototype.promptLength = function() {
@@ -730,7 +734,8 @@ THE SOFTWARE.
 
     CSConsole.prototype.moveInputForward = function() {
       this.currentLine = this.lineNumber() + 1;
-      this.console.setLine(this.currentLine - 1, "" + (this.inputLine()) + "\n" + this.options.prompt);
+      this.console.replaceRange("" + (this.inputLine()) + "\n" + this.options.prompt, {line: this.currentLine - 1, ch: 0}, {line: this.currentLine - 1, ch: this.console.getLine(this.currentLine - 1).length})
+      // this.console.setLine(this.currentLine - 1, "" + (this.inputLine()) + "\n" + this.options.prompt);
       this.storedCursorPosition = {
         line: this.currentLine,
         ch: this.promptLength()
@@ -810,7 +815,8 @@ THE SOFTWARE.
       };
 
       KeyActions.prototype.deleteLine = function() {
-        return this.console.setLine(this.console.getCursor().line, this.options.prompt);
+        return this.console.replaceRange(this.options.prompt, {line: this.console.getCursor().line, ch: 0}, {line: this.currentLine - 1, ch: this.console.getLine(this.currentLine - 1).length})
+        // return this.console.setLine(this.console.getCursor().line, this.options.prompt);
       };
 
       KeyActions.prototype.consoleLineCount = function() {

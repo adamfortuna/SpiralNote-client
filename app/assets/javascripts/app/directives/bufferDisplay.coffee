@@ -1,13 +1,26 @@
-angular.module('fullStackClass').directive 'fscBufferDisplay', ->
+angular.module('fullStackClass').directive 'fscBufferDisplay', ($rootScope, FSCSocket)->
     replace: true
     restrict: "E"
     scope: true
     template: """
-      <textarea></textarea>
+      <div>
+        <textarea></textarea>
+        <button ng-click='save()'>save</button>
+      </div>
     """
     link: (scope, element, attrs)->
-      scope.textEditor = CodeMirror.fromTextArea element[0],
-      tabSize: 2
-      lineNumbers: true
-      autofocus: false
+      scope.textEditor = CodeMirror.fromTextArea element.find('textarea')[0],
+        tabSize: 2
+        lineNumbers: true
+        autofocus: false
+      
+      $rootScope.$on 'file:show', (evt, data)->
+        scope.filePath = data.path
+        scope.textEditor.setValue(data.content)
+      
+      scope.save = ->
+        FSCSocket.func 'fsSaveFileBuffer', {path: scope.filePath, contents: scope.textEditor.getValue()}
+      
+      
+      
       
