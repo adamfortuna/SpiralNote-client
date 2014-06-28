@@ -5,5 +5,3 @@ angular.module('testApp').config ($stateProvider, $urlRouterProvider, $locationP
     .state 'root',
       url: '/'
       templateUrl: "assets/app/templates/index.html"
-      # controller: (FSCSocket)->
-      #   FSCSocket.establishConnection()

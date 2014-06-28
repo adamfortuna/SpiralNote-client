@@ -10,4 +10,4 @@
 //= require vendor/underscore
 //=require app/app
 //=require app/routes
-//=require_tree ./fsc/
+//=require_tree ./spiralNote/

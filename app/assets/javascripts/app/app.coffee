@@ -1,1 +1,1 @@
-angular.module('testApp', ['ui.router', 'ngSanitize', 'ngCookies', 'fsc'])
+angular.module('testApp', ['ui.router', 'ngSanitize', 'ngCookies', 'spiralNote'])
