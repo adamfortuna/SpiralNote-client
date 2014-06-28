@@ -1,4 +1,4 @@
-angular.module('fullStackClass').directive 'fscFileTree', (FSCSocket, $compile)->
+angular.module('fsc:treeView').directive 'fscTreeView', (FSCSocket, $compile)->
   replace: true
   restrict: "E"
   scope: true
@@ -12,8 +12,7 @@ angular.module('fullStackClass').directive 'fscFileTree', (FSCSocket, $compile)-
 
     FSCSocket.func('fsGetDirectoryTree', './demo').then (data)->
       scope.directory = {files: data.result, name: 'demo'}
-      fileList.append($compile(angular.element('<fsc-file-tree-directory></fsc-file-tree-directory>'))(scope))
-        
+      fileList.append($compile(angular.element('<fsc-tree-view-directory></fsc-tree-view-directory>'))(scope))
 
     .catch (error)->
       console.log(error)

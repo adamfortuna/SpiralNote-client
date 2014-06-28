@@ -1,1 +1,1 @@
-angular.module('fullStackClass', ['ui.router', 'ngSanitize', 'ngCookies'])
+angular.module('testApp', ['ui.router', 'ngSanitize', 'ngCookies', 'fsc'])

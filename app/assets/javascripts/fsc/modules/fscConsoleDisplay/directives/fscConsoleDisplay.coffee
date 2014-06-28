@@ -1,7 +1,7 @@
-angular.module('fullStackClass').directive 'fscConsole', ($compile, $timeout, FSCSocket)->
+angular.module('fsc:consoleDisplay').directive 'fscConsoleDisplay', (FSCSocket, $rootScope, $timeout)->
   replace: true
   restrict: "E"
-  scope: true
+  scope: {}
   template: """
     <div class="console console--single">
       <div class="console-ui"></div>

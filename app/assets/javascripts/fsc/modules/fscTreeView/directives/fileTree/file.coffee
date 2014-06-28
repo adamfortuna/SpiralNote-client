@@ -1,4 +1,4 @@
-angular.module('fullStackClass').directive 'fscFileTreeFile', (FSCSocket, $rootScope)->
+angular.module('fsc:treeView').directive 'fscTreeViewFile', (FSCSocket, $rootScope)->
   replace: true
   restrict: "E"
   scope: true

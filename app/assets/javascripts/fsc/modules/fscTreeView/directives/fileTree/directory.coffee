@@ -1,4 +1,4 @@
-angular.module('fullStackClass').directive 'fscFileTreeDirectory', ($compile)->
+angular.module('fsc:treeView').directive 'fscTreeViewDirectory', ($compile)->
   replace: true
   restrict: "E"
   scope: true
@@ -19,8 +19,8 @@ angular.module('fullStackClass').directive 'fscFileTreeDirectory', ($compile)->
       childScope = scope.$new()
       if fileObj.type == 'file'
         childScope.file = fileObj
-        newEl = angular.element('<fsc-file-tree-file></fsc-file-tree-file>')
+        newEl = angular.element('<fsc-tree-view-file></fsc-tree-view-file>')
       else if fileObj.type == 'directory'
         childScope.directory = fileObj
-        newEl = angular.element('<fsc-file-tree-directory></fsc-file-tree-directory>')
+        newEl = angular.element('<fsc-tree-view-directory></fsc-tree-view-directory>')
       fileList.append($compile(newEl)(childScope))

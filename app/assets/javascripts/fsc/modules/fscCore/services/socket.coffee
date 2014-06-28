@@ -1,4 +1,4 @@
-angular.module('fullStackClass').factory 'FSCSocket', (FSCSocketRpc)->
+angular.module('fsc:core').factory 'FSCSocket', (FSCSocketRpc)->
   socketUrl = "#{window.location.hostname}:#{8282}"
   socketLink = null
   

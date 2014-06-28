@@ -10,7 +10,4 @@
 //= require vendor/underscore
 //=require app/app
 //=require app/routes
-//= require_tree ./app/directives
-//= require_tree ./app/services
-//= require_tree ./app/controllers
-//= require_tree ./app/providers
+//=require_tree ./fsc/

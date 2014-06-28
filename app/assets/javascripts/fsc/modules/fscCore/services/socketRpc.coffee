@@ -1,7 +1,7 @@
 # A simple service class to make remote procedure calls across a socket connection
 # used in conjuntion with the node rpc.coffee file.
 
-angular.module('fullStackClass').factory 'FSCSocketRpc', ($q)->
+angular.module('fsc:core').factory 'FSCSocketRpc', ($q)->
   rpcId = 0
   
   # returns a promise
