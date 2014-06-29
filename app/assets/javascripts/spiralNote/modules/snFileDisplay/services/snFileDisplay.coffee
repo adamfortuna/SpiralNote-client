@@ -4,11 +4,8 @@ angular.module('sn:fileDisplay').factory 'snFileDisplay', (snApi)->
   saveActiveBuffer: ->
     return unless activeFile
 
-    path = activeFile.path
-    fileName = activeFile.fileName
-
     snApi.file.write(activeFile.path, activeFile.editor.getValue()).then ->
-      snApi.event.emit('fileDisplay:fileSaved', {path: path, fileName: fileName})
+      snApi.event.emit('fileDisplay:file:saved', {path: activeFile.path, fileName: activeFile.fileName})
     
   setActiveFile: (path, fileName, editorDoc)->
     activeFile = {path: path, fileName: fileName, editor: editorDoc}

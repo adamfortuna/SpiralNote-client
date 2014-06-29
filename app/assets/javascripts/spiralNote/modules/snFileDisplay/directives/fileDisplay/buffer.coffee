@@ -8,7 +8,10 @@ angular.module("sn:fileDisplay").directive "snFileDisplayBuffer", ($timeout, snA
       <div class="bg-overlay"></div>
     </div>
   """
-  link: (scope, element, attrs)->    
+  link: (scope, element, attrs)->  
+    scope.saved = false
+    firstLoadFinished = false
+  
     autoModeForPath = (path)->
       pathArr = path.split(".")
       extension = pathArr[pathArr.length - 1]
@@ -44,6 +47,18 @@ angular.module("sn:fileDisplay").directive "snFileDisplayBuffer", ($timeout, snA
     
     $timeout ->
       scope.textEditor.refresh()
+      
+    scope.textEditor.on 'change', ->
+      if scope.saved && firstLoadFinished
+        snApi.event.emit 'fileDisplay:file:dirty', {path: scope.file.path, fileName: scope.file.fileName}
+        scope.saved = false
+      else
+        firstLoadFinished = true
+        scope.saved = true
+      
+    snApi.event.on 'fileDisplay:file:saved', (data)->
+      if data.path == scope.file.path
+        scope.saved = true
     
     snApi.file.read(scope.file.path).then (fileData)->
-      scope.textEditor.setValue(fileData.content)    
+      scope.textEditor.setValue(fileData.content)
