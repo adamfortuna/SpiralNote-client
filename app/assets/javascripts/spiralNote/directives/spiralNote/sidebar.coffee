@@ -1,13 +1,13 @@
-angular.module('spiralNote').directive 'snEditorRightPane', (snView, $compile)->
+angular.module('spiralNote').directive 'snEditorSidebar', (snView, $compile)->
   replace: true
   restrict: "EA"
   scope: true
   template: """
-    <div class='spiralNote--rightPane'>
+    <div class='spiralNote--sidebar'>
 
     </div>
   """
   link: (scope, element, attrs)->
-    _.each snView.rightViews(), (view)->
+    _.each snView.sidebarViews(), (view)->
       childScope = scope.$new()
       element.append($compile(view)(childScope))

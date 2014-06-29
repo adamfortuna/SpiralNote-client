@@ -1,4 +1,4 @@
 angular.module('sn:consoleDisplay').config (snViewProvider)->
-  snViewProvider.addRight """
+  snViewProvider.addBottom """
     <sn-console-display></sn-console-display>
   """

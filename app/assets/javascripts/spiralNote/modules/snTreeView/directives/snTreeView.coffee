@@ -12,7 +12,7 @@ angular.module('sn:treeView').directive 'snTreeView', (snSocket, $compile)->
 
     snSocket.func('fsGetDirectoryTree', './demo').then (data)->
       scope.directory = {files: data.result, name: 'demo'}
-      fileList.append($compile(angular.element('<sn-tree-view-directory></sn-tree-view-directory>'))(scope))
+      fileList.append($compile(angular.element('<sn-tree-view-directory collapse="false"></sn-tree-view-directory>'))(scope))
 
     .catch (error)->
       console.log(error)

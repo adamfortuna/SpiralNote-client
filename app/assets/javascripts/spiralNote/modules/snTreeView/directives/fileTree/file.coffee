@@ -3,7 +3,12 @@ angular.module('sn:treeView').directive 'snTreeViewFile', (snSocket, $rootScope)
   restrict: "E"
   scope: true
   template: """
-    <li><a href='' ng-click="showFile()">{{file.name}}</a></li>
+    <li class="sn-treeView--file">
+      <a href='' ng-click="showFile()">
+        <i class="fa fa-file-text-o"></i>
+        {{file.name}}
+      </a>
+    </li>
   """
   link: (scope, element, attrs)->
     

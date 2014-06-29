@@ -1,11 +1,11 @@
-angular.module('sn:fileDisplay').directive 'snFileDisplay', (snSocket, $rootScope)->
+angular.module('sn:fileDisplay').directive 'snFileDisplay', (snSocket, $rootScope, $timeout)->
   replace: true
   restrict: "E"
   scope: {}
   template: """
-    <div>
+    <div class='sn-fileDisplay'>
       <textarea></textarea>
-      <button ng-click='save()'>save</button>
+      <div class='bg-overlay'></div>
     </div>
   """
   link: (scope, element, attrs)->
@@ -13,6 +13,9 @@ angular.module('sn:fileDisplay').directive 'snFileDisplay', (snSocket, $rootScop
       tabSize: 2
       lineNumbers: true
       autofocus: false
+    
+    $timeout ->
+      scope.textEditor.refresh()
     
     $rootScope.$on 'file:show', (evt, data)->
       scope.filePath = data.path

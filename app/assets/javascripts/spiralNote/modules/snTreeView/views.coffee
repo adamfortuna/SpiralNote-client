@@ -1,4 +1,4 @@
 angular.module('sn:treeView').config (snViewProvider)->
-  snViewProvider.addLeft """
+  snViewProvider.addToSidebar """
     <sn-tree-view></sn-tree-view>
   """
