@@ -16,7 +16,7 @@ angular.module('sn:consoleDisplay').directive 'snConsoleDisplay', (snSocket, $ro
       prompt: '$ '
       historyLabel: "spiralNote--console"
       # syntax: consoleData.type
-      welcomeMessage: 'Welcome to full stack class!'
+      welcomeMessage: 'Welcome to Spiral Note'
       autoFocus: false
       # initialValue: consoleData.starting_content
       commandValidate: (line)->

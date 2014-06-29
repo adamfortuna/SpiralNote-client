@@ -1,16 +1,15 @@
-angular.module('sn:treeView').directive 'snTreeViewDirectory', ($compile)->
+angular.module('sn:treeView').directive 'snTreeViewDirectory', ($compile, snApi)->
   replace: true
   restrict: "E"
   scope: true
   template: """
     <li class="sn-treeView--directory">
-      <h3>
-        <a href='' ng-click='collapse=!collapse'>
-          <i ng-class="{'fa fa-caret-down': !collapse, 'fa fa-caret-right': collapse}"></i>
-          <i class="fa fa-folder-o"></i>
-          {{directory.name}}
-        </a>
-      </h3>
+      <div class='sn-treeView--selectOverlay' ng-if='selected'></div>
+      <a href='' ng-click='selectDirectory()'>
+        <i ng-class="{'fa fa-caret-down': !collapse, 'fa fa-caret-right': collapse}"></i>
+        <i class="fa fa-folder-o"></i>
+        {{directory.name}}
+      </a>
       <ul ng-show='!collapse'></ul>
     </li>
   """
@@ -36,3 +35,16 @@ angular.module('sn:treeView').directive 'snTreeViewDirectory', ($compile)->
       childScope.file = fileObj
       newEl = angular.element('<sn-tree-view-file></sn-tree-view-file>')
       fileList.append($compile(newEl)(childScope))
+    
+    scope.selectDirectory = ->
+      scope.collapse = !scope.collapse
+      snApi.event.emit('directory:selected', {path: scope.directory.path, dirName: scope.directory.name})
+    
+    snApi.event.on 'directory:selected', (data)->
+      if scope.directory.path == data.path
+        scope.selected = true
+      else
+        scope.selected = false
+    
+    snApi.event.on 'file:selected', (data)->
+      scope.selected = false

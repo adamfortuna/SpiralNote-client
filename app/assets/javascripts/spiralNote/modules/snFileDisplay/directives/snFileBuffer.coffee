@@ -46,9 +46,12 @@ angular.module("sn:fileDisplay").directive "snFileBuffer", ($timeout, snApi)->
       scope.textEditor.refresh()
 
     snApi.event.on 'file:selected', (data)->
-      # {path: scope.file.path, fileName: scope.file}
       scope.filePath = data.path
       autoModeForPath(scope.filePath)
+      
+      # Make api call to read the specified file. I'll need to figure out some sort
+      # of client caching so we don't refetch and overwrite the browser content
+      # until after a save or something.
       snApi.file.read(data.path).then (fileData)->
         scope.textEditor.setValue(fileData.content)
     
