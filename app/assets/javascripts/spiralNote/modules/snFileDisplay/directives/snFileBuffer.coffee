@@ -1,4 +1,4 @@
-angular.module("sn:fileDisplay").directive "snFileBuffer", (snSocket, $rootScope, $timeout)->
+angular.module("sn:fileDisplay").directive "snFileBuffer", ($timeout, snApi)->
   replace: true
   restrict: "E"
   scope: {}
@@ -44,14 +44,15 @@ angular.module("sn:fileDisplay").directive "snFileBuffer", (snSocket, $rootScope
     
     $timeout ->
       scope.textEditor.refresh()
-    
-    $rootScope.$on "file:show", (evt, data)->
+
+    snApi.event.on 'file:selected', (data)->
+      # {path: scope.file.path, fileName: scope.file}
       scope.filePath = data.path
-      
       autoModeForPath(scope.filePath)
-      scope.textEditor.setValue(data.content)
+      snApi.file.read(data.path).then (fileData)->
+        scope.textEditor.setValue(fileData.content)
     
-    scope.save = ->
-      snSocket.func "fsSaveFileBuffer", {path: scope.filePath, contents: scope.textEditor.getValue()}
+    # scope.save = ->
+    #   snSocket.func "fsSaveFileBuffer", {path: scope.filePath, contents: scope.textEditor.getValue()}
       
     

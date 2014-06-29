@@ -21,7 +21,7 @@ angular.module('sn:core').provider 'snApi', ->
       views[location] ||= []
       views[location].push(html)
 
-  @$get = ->
+  @$get = (snEventHandler, snFileSystem)->
     
     new ->
       init: ->
@@ -49,6 +49,10 @@ angular.module('sn:core').provider 'snApi', ->
         
       views: ->
         views
+      
+      event: new snEventHandler()
+      
+      file: new snFileSystem()
 
   # This is required since the $get method was being detected by angular when being returned
   return

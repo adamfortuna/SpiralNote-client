@@ -1,4 +1,4 @@
-angular.module('sn:treeView').directive 'snTreeViewFile', (snSocket, $rootScope)->
+angular.module('sn:treeView').directive 'snTreeViewFile', (snApi)->
   replace: true
   restrict: "E"
   scope: true
@@ -13,7 +13,8 @@ angular.module('sn:treeView').directive 'snTreeViewFile', (snSocket, $rootScope)
   link: (scope, element, attrs)->
     
     scope.showFile = ->
-      snSocket.func('fsReadFile', scope.file.path).then (data)->
-        $rootScope.$emit 'file:show', {fileName: scope.file.name, content: data.result, path: scope.file.path}
+      snApi.event.emit 'file:selected', {path: scope.file.path, fileName: scope.file}
+      # snSocket.func('fsReadFile', scope.file.path).then (data)->
+      #   $rootScope.$emit 'file:show', {fileName: scope.file.name, content: data.result, path: scope.file.path}
         
         
