@@ -2,6 +2,8 @@ angular.module('sn:fileDisplay').factory 'snFileDisplay', (snApi)->
   activeFile = null
   
   saveActiveBuffer: ->
+    return unless activeFile
+
     path = activeFile.path
     fileName = activeFile.fileName
 
