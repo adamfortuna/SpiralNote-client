@@ -55,3 +55,37 @@ The modules api is intended to allow access to other modules
 
   - `get(moduleName)` - Returns the module's list of exposed api functions
     This can also be used to target a specific function. ex: `get("treeView:files:select")("path/to/file")`
+    
+## KeyBindings
+  `snApi.keyBindings`
+  - `add(obj)` - add new keybindings, obj should be structured with a class at the top
+    level and key combinations as 2nd level keys. ex:
+    
+    ```javascript
+    {
+      '.tree-view': {
+        'cmd+o': 'treeView:openSelected',
+        'cmd+c': 'treeView:copySelected',
+        'cmd+v': 'treeView:paste'
+      }
+    }
+    ```
+  
+## Menu
+  `snApi.menu`
+  
+  ### Context
+  `snApi.menu.context`
+  Contextual right click menu
+  
+  - `add(obj)` - Adds new menu items to a menu scoped to the current target of the right click ex:
+    
+    ```javascript
+      {
+        '.tree-view-file': {
+          'Copy': 'treeView:copySelected',
+          'Delete': 'treeView:deleteSelected',
+          'Paste': 'treeView:paste'
+        }
+      }
+    ```

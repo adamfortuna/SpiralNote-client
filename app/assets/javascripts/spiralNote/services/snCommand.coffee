@@ -1,5 +1,5 @@
-angular.module('spiralNote').factory 'snCommand', (snKeybindings, snContextualMenu, snSocket)->
+angular.module('spiralNote').factory 'snCommand', (snKeybindings, snContextMenu, snSocket)->
   init: ->
     snKeybindings.init()
-    snContextualMenu.init()
+    snContextMenu.init()
     snSocket.establishConnection()

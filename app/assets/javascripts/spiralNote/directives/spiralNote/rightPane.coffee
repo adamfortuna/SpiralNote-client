@@ -8,6 +8,6 @@ angular.module('spiralNote').directive 'snEditorRightPane', (snView, $compile)->
     </div>
   """
   link: (scope, element, attrs)->
-    _.each snView.rightViews(), (view)->
+    _.each snView.getForType('right'), (view)->
       childScope = scope.$new()
       element.append($compile(view)(childScope))

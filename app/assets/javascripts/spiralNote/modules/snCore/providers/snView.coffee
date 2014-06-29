@@ -1,28 +1,24 @@
-angular.module('sn:core').provider 'snView', ->
-  sidebarViews = []
-  rightViews = []
-  bottomViews = []
+angular.module('sn:core').provider 'snView', ->  
+  views = {}
+  viewTypes = ['sidebar', 'right', 'bottom', 'top']
+  _.each viewTypes, (type)->
+    views[type] = []
 
-  @addToSidebar = (html)->
-    sidebarViews.push(html)
-    
-  @addRight = (html)->
-    rightViews.push(html)
-  
-  @addBottom = (html)->
-    bottomViews.push(html)
+  @addTo = (location, html)->
+    views[location] = html
 
   # Swap out $log for something else if you want to change log adapters
-  @$get = ->
+  @$get = (snApi)->
+    apiViews = snApi.views()
+    _.each viewTypes, (type)->
+      views[type] = views[type].concat(apiViews[type] || [])
+
     new ->
-      sidebarViews: ->
-        sidebarViews
+      types: ->
+        viewTypes
       
-      rightViews: ->
-        rightViews
-      
-      bottomViews: ->
-        bottomViews
+      getForType: (type)->
+        views[type]
 
   # This is required since the $get method was being detected by angular when being returned
   return

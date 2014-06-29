@@ -8,6 +8,6 @@ angular.module('spiralNote').directive 'snEditorBottomPane', (snView, $compile)-
     </div>
   """
   link: (scope, element, attrs)->
-    _.each snView.bottomViews(), (view)->
+    _.each snView.getForType('bottom'), (view)->
       childScope = scope.$new()
       element.append($compile(view)(childScope))

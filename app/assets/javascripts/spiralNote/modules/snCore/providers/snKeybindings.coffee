@@ -3,7 +3,8 @@ angular.module('sn:core').provider 'snKeybindings', ->
   @registerKeyBindings = (keybindingObj)->
     _.extend(keybindings, keybindingObj)
 
-  @$get = ->
+  @$get = (snApi)->
+    _.extend(keybindings, snApi.keyBindings())
     new ->
       init: ->
         console.log("keybindings init:")

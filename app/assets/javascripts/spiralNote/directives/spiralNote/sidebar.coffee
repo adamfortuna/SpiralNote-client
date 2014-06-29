@@ -8,6 +8,6 @@ angular.module('spiralNote').directive 'snEditorSidebar', (snView, $compile)->
     </div>
   """
   link: (scope, element, attrs)->
-    _.each snView.sidebarViews(), (view)->
+    _.each snView.getForType('sidebar'), (view)->
       childScope = scope.$new()
       element.append($compile(view)(childScope))
