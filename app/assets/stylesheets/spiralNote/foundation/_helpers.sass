@@ -1,0 +1,270 @@
+// *************************************
+//
+//   Helpers
+//   -> Functions, Mixins, Keyframe Animations
+//
+// *************************************
+
+// -------------------------------------
+//   Functions
+// -------------------------------------
+
+// ----- Opposite Position ----- //
+// -> Returns the opposite side
+//
+// $side - the side to return the opposite of
+//
+
+@function opposite-position($side)
+  @if $side == 'top'
+    @return 'bottom'
+  @if $side == 'bottom'
+    @return 'top'
+  @if $side == 'left'
+    @return 'right'
+  @if $side == 'right'
+    @return 'left'
+
+// ----- z-index ----- //
+// -> http://www.smashingmagazine.com/2014/06/12/sassy-z-index-management-for-complex-layouts/
+//
+// $element - the name of the element in the list
+// $list - the name of the list (defaults to `$zi-global`)
+//
+
+@function zi($element, $list: $zi-global)
+  $index: index($list, $element)
+
+  @if $index
+    @return $index * $zi-base
+
+  @warn 'There is no item "#{$element}" in this list; choose one of: #{$list}'
+  @return null
+
+// -------------------------------------
+//   Mixins
+// -------------------------------------
+
+// ----- Animation ----- //
+// -> Auto-prefixed animation properties
+//
+// $args - the animation arguments
+//
+
+=animation($args)
+  -webkit-animation: $args
+  animation: $args
+
+// ----- Caret ----- //
+// -> Adds an arrow to an element
+//
+// $side - the side ('left', 'right', 'top', 'bottom')
+// $size - the size of the caret
+// $color - the color of the caret
+//
+
+=caret($side, $size, $color)
+  $opposite: opposite-position($side)
+  border: $size solid transparent
+  border-#{$opposite}: $size solid $color
+  border-#{$side}: 0
+  bottom: auto
+  content: ''
+  display: block
+  height: 0
+  left: 50%
+  margin: (-$size) 0 0 (-$size)
+  margin-#{$side}: 0
+  position: absolute
+  right: auto
+  top: 50%
+  width: 0
+  #{$side}: -$size
+  #{$opposite}: auto
+
+// ----- Font Face ----- //
+// -> https://github.com/thoughtbot/bourbon/edit/master/app/assets/stylesheets/css3/_font-face.scss#
+//
+// $family - the font-family
+// $path - the font path
+// $weight - the font-weight
+// $style - the font-style
+// $asset-pipeline - use the Rails asset pipeline (boolean)
+
+=font-face($family, $path, $weight: normal, $style: normal, $asset-pipeline: true)
+  @font-face
+    font-family: $family
+    font-style: $style
+    font-weight: $weight
+    @if $asset-pipeline == true
+      src: font-url('#{$path}.eot')
+      src: font-url('#{$path}.eot?#iefix') format('embedded-opentype'), font-url('#{$path}.woff') format('woff'), font-url('#{$path}.ttf') format('truetype'), font-url('#{$path}.svg##{$family}') format('svg')
+    @else
+      src: url('#{$path}.eot')
+      src: url('#{$path}.eot?#iefix') format('embedded-opentype'), url('#{$path}.woff') format('woff'), url('#{$path}.ttf') format('truetype'), url('#{$path}.svg##{$family}') format('svg')
+
+// ----- Keyframe Animation ----- //
+// -> Auto-prefixed keyframe-animation
+//
+// $name - the name of the animation
+// @content - the generated content within the mixin
+//
+
+=keyframe-animation($name)
+  @-webkit-keyframes #{$name}
+    @content
+  @-moz-keyframes #{$name}
+    @content
+  @keyframes #{$name}
+    @content
+
+// ----- Linear Gradient ----- //
+// -> Auto-prefixed linear-gradient properties (with fallback)
+//
+// $first - the first color stop (also, fallback color)
+// $second - the second color stop
+//
+
+=linear-gradient($first, $second)
+  background-image: -webkit-linear-gradient($first, $second)
+  background-image: linear-gradient($first, $second)
+  background-color: $first
+
+// ----- Respond-to ----- //
+// -> Generates a media query
+//
+// $val - the breakpoint size
+// $query - the type of query ('min-width', 'max-width')
+// $media - the media type ('screen', 'print', etc.)
+// @content - the generated content within the mixin
+//
+
+=respond-to($val, $query: min-width, $media: screen)
+  @media #{$media} and ($query: $val)
+    @content
+
+// ----- Status Icon ----- //
+// -> Creates a sticky icon for a container
+//
+// $icon - the icon to use
+// $color - the color of the icon
+// $corner - which corner to display it ('topleft', 'bottomright', etc.)
+
+=status-icon($icon, $color, $corner)
+  @extend %icn
+  @extend %icn--#{$icon}
+  &::before
+    $size: 21px
+    background: $c-invert
+    border-radius: $b-borderRadius
+    box-shadow: $b-boxShadow
+    color: $color
+    display: block
+    font-size: 130%
+    height: $size
+    line-height: $size
+    padding: 3px
+    position: absolute
+    text-align: center
+    width: $size
+    z-index: zi('badge-icn')
+    @if $corner == 'topleft'
+      left: -10px
+      top: -10px
+    @if $corner == 'topright'
+      left: -10px
+      top: -10px
+    @if $corner == 'bottomleft'
+      bottom: -10px
+      left: -10px
+    @if $corner == 'bottomright'
+      bottom: -10px
+      right: -10px
+
+// ----- Transform ----- //
+// -> Auto-prefixed transform properties
+//
+// $args - a variable number of transform values
+//
+
+=transform($args...)
+  -webkit-transform: $args
+  -moz-transform: $args
+  -ms-transform: $args
+  transform: $args
+
+// ----- Transition ----- //
+// -> Auto-prefixed transition properties
+//
+// $args - a variable number of transition values
+//
+
+=transition($args...)
+  -webkit-transition: $args
+  transition: $args
+
+// ----- Transition Transform ----- //
+// -> Auto-prefixed transition properties (for transforms)
+//
+// $args - a variable number of transform values
+//
+
+=transition-transform($args...)
+  -webkit-transition: -webkit-transform $args
+  transition: transform $args
+
+// -------------------------------------
+//   Keyframe Animations
+// -------------------------------------
+
+// ----- Bounce ----- //
+
++keyframe-animation(bounce)
+  0%, 20%, 50%, 80%, 100%
+    +transform(translateY(0))
+  40%
+    +transform(translateY(-30px))
+  60%
+    +transform(translateY(-15px))
+
+// ----- Fade In ----- //
+
+// Left
+
++keyframe-animation(fadeInLeftBig)
+  0%
+    +transform(translateX(-100%))
+    opacity: 0
+  100%
+    +transform(translateX(0))
+    opacity: 1
+
+// ----- Flash ----- //
+
++keyframe-animation(flash)
+  0%, 50%, 100%
+    opacity: 1
+  25%, 75%
+    opacity: 0
+
+// ----- Flash ----- //
+
++keyframe-animation(flashPartial)
+  0%, 50%, 100%
+    opacity: 1
+  25%, 75%
+    opacity: 0.5
+
+// ----- Tada ----- //
+
++keyframe-animation(tada)
+  0%
+    +transform(scale(1))
+  10%, 20%
+    +transform(scale(0.9) rotate(-3deg))
+  30%, 50%, 70%, 90%
+    +transform(scale(1.1) rotate(3deg))
+  40%, 60%, 80%
+    +transform(scale(1.1) rotate(-3deg))
+  100%
+    +transform(scale(1) rotate(0))

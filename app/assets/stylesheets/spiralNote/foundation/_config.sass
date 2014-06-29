@@ -1,0 +1,528 @@
+// *************************************
+//
+//   Config
+//   -> Fonts, Variables
+//
+// *************************************
+
+// -------------------------------------
+//   @font-face
+// -------------------------------------
+
+// +font-face('OpenSansRegular', 'OpenSans-Regular')
+// +font-face('OpenSansRegular', 'OpenSans-Bold', bold)
+// +font-face('OpenSansRegular', 'OpenSans-Italic', normal, italic)
+// +font-face('OpenSansLight', 'OpenSans-Light')
+
+// -------------------------------------
+//   Variables
+// -------------------------------------
+
+// ----- Base ----- //
+
+$b-borderColor: #ddd !default
+$b-borderStyle: solid !default
+$b-borderWidth: 1px !default
+$b-border: $b-borderWidth $b-borderStyle $b-borderColor !default
+$b-borderRadius: 3px !default
+$b-boxShadow: 0 1px 1px rgba(#222, 0.25) !default
+$b-fontSize: 16px !default
+$b-lineHeight: 1.5 !default
+$b-maxWidth: 75em !default
+$b-minWidth: 48em !default
+$b-fontSize-xs: 60% !default
+$b-fontSize-s: 75% !default
+$b-fontSize-m: 85% !default
+$b-fontSize-l: 115% !default
+$b-theme: light !default
+$b-transitionSpeed: 0.3s !default
+$b-whitespace: 1.25em !default
+$b-whitespace-xs: 0.25 * $b-whitespace !default
+$b-whitespace-s: 0.5 * $b-whitespace !default
+$b-whitespace-l: 2 * $b-whitespace !default
+$b-whitespace-xl: 4 * $b-whitespace !default
+
+// ----- Colors ----- //
+
+$c-background: #f6f7f7 !default
+$c-base: #585a5b !default
+$c-error: #b24626 !default
+$c-highlight: #278998 !default
+$c-invert: #fff !default
+$c-secondary: #bebdbc !default
+$c-subdue: #828582 !default
+$c-success: #31a480 !default
+$c-warning: #f2c342 !default
+
+// ----- Fonts ----- //
+
+$f-base: 'OpenSansRegular', 'Helvetica Neue', Arial, sans-serif !default
+$f-header: 'OpenSansRegular', 'Helvetica Neue', Arial, sans-serif !default
+$f-light: 'OpenSansLight', 'Helvetica Neue', Arial, sans-serif !default
+$f-mono: Monaco, monospace !default
+
+// ----- Achievement Card ----- //
+
+$achievementCard-label-color: $c-subdue !default
+$achievementCard-maxWidth: 15.625em !default
+
+// ----- Badge ----- //
+
+$badge-background: $c-invert !default
+$badge-locked-overlay-background: $c-invert !default
+$badge-locked-overlay-opacity: 0.8 !default
+$badge-overlay-background: $c-invert !default
+$badge-overlay-opacity: 0.5 !default
+$badge-padding: 6px !default
+$badge-size: 110px !default
+
+// ----- Bar ----- //
+
+// Colors
+
+$bar--editor-background: lighten($c-secondary, 10%) !default
+$bar--editor-color: $c-base !default
+$bar--resources-background: lighten($c-secondary, 10%) !default
+$bar--resources-color: $c-base !default
+
+// Dimensions
+
+$bar-height: 60px !default
+$bar--sm-height: $bar-height / 2 !default
+
+// ----- Brand ----- //
+
+$brand-maxHeight: 34px !default
+
+// ----- Button ----- //
+
+$btn-color: $c-base !default
+$btn--a-background: $c-highlight !default
+$btn--a-color: $c-invert !default
+$btn--b-background: $c-secondary !default
+$btn--b-color: $c-base !default
+$btn--control-background: $c-base !default
+$btn--control-color: $c-invert !default
+$btn-empty-background: $c-subdue !default
+$btn--hint-background: $c-highlight !default
+$btn--hint-color: $c-invert !default
+$btn--hint-last-background: $c-error !default
+$btn-inactive-opacity: 0.5 !default
+$btn-lineHeight: (2 * $b-lineHeight) !default
+$btn-loading-background: rgba(#fff, 0.9) !default
+$btn-loading-color: $c-base !default
+$btn--next-background: $c-highlight !default
+$btn--next-gradient: false !default
+$btn--next-gradient-background-end: darken($btn--next-background, 7%) !default
+$btn--next-gradient-background-start: lighten($btn--next-background, 10%) !default
+
+// ----- Card ----- //
+
+$card-background: $c-invert !default
+$card--b-background: $c-background !default
+
+// ----- Code Editor ----- //
+
+// Base
+
+$codeEditor-background: $c-invert !default
+$codeEditor-color: $c-base !default
+$codeEditor-fontFamily: $f-mono !default
+$codeEditor-lineHeight: $b-lineHeight !default
+
+// Outer
+
+$codeEditor-activeLine-background: grey !default
+$codeEditor-cursor: 2px solid $c-base !default
+$codeEditor-gutters-background: $c-invert !default
+$codeEditor-gutters-border: 0 !default
+$codeEditor-foldmarker-color: $c-base !default
+$codeEditor-foldmarker-textShadow: 0 0 4px rgba($c-highlight, 0.75) !default
+$codeEditor-lineNumber-color: lighten($c-subdue, 25%) !default
+$codeEditor-lockedCode-background: lighten($c-subdue, 22%) !default
+$codeEditor-lockedCode-opacity: 0.75 !default
+$codeEditor-matchingBracket: 1px solid grey !default
+$codeEditor-selected-background: lighten($c-subdue, 35%) !default
+
+// Syntax Highlighting
+
+$codeEditor-atom: #d87328 !default
+$codeEditor-attribute: $c-highlight !default
+$codeEditor-bracket: yellow !default
+$codeEditor-builtin: #36a883 !default
+$codeEditor-comment: #898989 !default
+$codeEditor-def: $c-highlight !default
+$codeEditor-header: yellow !default
+$codeEditor-hr: yellow !default
+$codeEditor-keyword: #36a883 !default
+$codeEditor-link: yellow !default
+$codeEditor-meta: #d87328 !default
+$codeEditor-number: $c-highlight !default
+$codeEditor-operator: #464646 !default
+$codeEditor-property: #36a883 !default
+$codeEditor-qualifier: $c-base !default
+$codeEditor-quote: #b64526 !default
+$codeEditor-string: #b64526 !default
+$codeEditor-string2: #b64526 !default
+$codeEditor-tag: #d87328 !default
+$codeEditor-variable: #464646 !default
+$codeEditor-variable2: #464646 !default
+$codeEditor-variable3: $c-highlight !default
+
+// ----- Console ----- //
+
+$console-background: $c-base !default
+$console-color: $c-invert !default
+$console-cursor-size: 6px !default
+$console-maxHeight: 300px !default
+$console-minHeight: 50px !default
+
+// ----- Content ----- //
+
+$content-codeEditor-complete-background: darken($c-background, 5%) !default
+$content-objective-title-color: $c-highlight !default
+$content-row-height: 75px !default
+$content-section-editing-background: lighten($c-background, 2%) !default
+$content-section-minHeight: 600px !default
+
+// ----- Course Bar ----- //
+
+$courseBar-background: $c-invert !default
+$courseBar-border: 0 !default
+$courseBar-boxShadow: none !default
+$courseBar-brand-label-color: $c-base !default
+$courseBar-color: $c-base !default
+
+// ----- Course List ----- //
+
+$courseList-item-label-color: $c-subdue !default
+
+// ----- Dot List ----- //
+
+$dotList-item-link-active-color: $c-base !default
+$dotList-item-link-color: $c-subdue !default
+$dotList-item-link-complete-color: $c-success !default
+$dotList-item-link-hover-color: $c-base !default
+
+// ----- Dropdown ----- //
+
+$dropdown-link-active-background: lighten($c-base, 20%) !default
+$dropdown-link-active-color: $c-invert !default
+$dropdown-link-color: $c-invert !default
+$dropdown-link-hover-color: lighten($c-subdue, 15%) !default
+$dropdown-menu-background: $c-base !default
+$dropdown-width: 220px !default
+
+// ----- Feed ----- //
+
+$feed-icons: 'incorrect', 'hint', 'check' !default
+$feed-types: 'error', 'hint', 'success' !default
+$feed-item--answer-header-background: $c-highlight !default
+$feed-item--answer-header-color: $c-invert !default
+$feed-item--answer-header-borderColor: transparent !default
+$feed-item-content-code-background: lighten($c-subdue, 40%) !default
+$feed-item--error-color: $c-error !default
+$feed-item--hint-color: $c-highlight !default
+$feed-item--success-color: $c-success !default
+$feed-item-row--a-background: lighten($c-subdue, 25%) !default
+$feed-colors: $feed-item--error-color, $feed-item--hint-color, $feed-item--success-color !default
+
+// ----- Flash ----- //
+
+$flash-animationSpeed: 0.5s !default
+$flash--error-close-color: $c-invert !default
+$flash--error-label-color: $c-invert !default
+$flash--error-title-color: $c-invert !default
+$flash--success-close-color: $c-invert !default
+$flash--success-label-color: $c-invert !default
+$flash--success-title-color: $c-invert !default
+$flash--warning-close-color: $c-invert !default
+$flash--warning-label-color: $c-invert !default
+$flash--warning-title-color: $c-invert !default
+$flash-background: $c-base !default
+$flash-close-color: $c-invert !default
+$flash-label-color: $c-invert !default
+$flash-title-color: $c-invert !default
+$flash-width: 40em !default
+
+// ----- Form ----- //
+
+$form-input-background: lighten($c-background, 2%) !default
+$form-input-border: $b-border !default
+$form-input-focus-borderColor: $c-highlight !default
+
+// ----- Grid ----- //
+
+// Sizes
+
+$grid-s: 48em
+$grid-m: 64em
+$grid-l: 82em
+
+// Settings
+
+$grid-columns: 12 !default
+// $grid-defaults: (tablet: $grid-s, desk: $grid-m, wide: $grid-l) !default
+$grid-gutter: 30px !default
+$grid-silent: false !default
+
+// ----- Header ----- //
+
+$header-label-background: $c-subdue !default
+$header-num-border: $b-border !default
+$header-num-color: $c-highlight !default
+$header-title-color: $c-base !default
+
+// ----- Hero ----- //
+
+$hero-backgroundColor: #000 !default
+$hero-backgroundImage: false !default
+$hero-backgroundImage-filename: 'bg-hero.png' !default
+$hero-backgroundRepeat: false !default
+$hero-backgroundSize: auto !default
+$hero-maxHeight: 200px !default
+$hero-row-background: transparent !default
+$hero-row-background-gradient: false !default
+$hero-row-background-gradient-end: rgba(black, 0) !default
+$hero-row-background-gradient-start: rgba(black, 0.15) !default
+$hero-title-color: $c-invert !default
+$hero-title-sub-color: rgba($c-invert, 0.75) !default
+
+// ----- Icons ----- //
+
+// $icon-buttons: (hint: hint--alt--a, share: share, slides: slides, video: video--alt--b) !default
+
+// ----- Instructions ----- //
+
+$instructions-maxWidth: 43.75em !default
+
+// ----- Intro ----- //
+
+$intro-breakdown-borderColor: lighten($c-subdue, 35%) !default
+$intro-breakdown-borderSize: 1px !default
+$intro-subTitle-color: $c-subdue !default
+$intro-title-color: $c-invert !default
+
+// ----- Level List ----- //
+
+$levelList-item-title-border: 1px solid $c-subdue !default
+$levelList-item-title-color: $c-subdue !default
+
+// ----- Loader ----- //
+
+$loader--a-background: rgba($c-invert, 0.5) !default
+$loader--a-size: 5px !default
+$loader--a-speed: 5s !default
+$loader--b-background: $c-invert !default
+$loader--b-size: 10px !default
+$loader--b-speed: 1s !default
+$loader--c-background: $c-invert !default
+$loader--c-duration: 1s !default
+$loader--c-size: 6px !default
+
+// ----- Map ----- //
+
+$map-maxWidth: 40em !default
+$map-level-content-height: 400px !default
+$map-level-item-complete-color: lighten($c-subdue, 25%) !default
+$map-level-label-color: $c-highlight !default
+$map-level-list-color: $c-subdue !default
+$map-level-list-maxHeight: $map-level-content-height - 132px !default
+$map-level-section-background: darken($c-background, 2%) !default
+$map-level-section-title-color: lighten($c-subdue, 15%) !default
+
+// ----- Modal ----- //
+
+$modal-backdrop: $c-background !default
+$modal-backdrop-opacity: 0.97 !default
+$modal-content-background: $c-invert !default
+$modal-content-boxShadow: $b-boxShadow !default
+$modal-header-close-color: $c-base !default
+
+// ----- Objective ----- //
+
+$objective-body-code-background: $c-invert !default
+$objective-body-code-border: 0 !default
+$objective-body-code-color: $c-base !default
+$objective-maxWidth: 37.5em !default
+
+// ----- Omnibar ----- //
+
+$omnibar-background: $c-invert !default
+$omnibar-border: 0 !default
+$omnibar-boxShadow: none !default
+$omnibar-btn-height: 36px !default
+$omnibar-color: $c-base !default
+
+// ----- Pager Nav ----- //
+
+$pagerNav-list-background: $omnibar-background !default
+$pagerNav-list-link-background: lighten($c-subdue, 15%) !default
+$pagerNav-list-link-active-background: $c-base !default
+
+// ----- Panel ----- //
+
+// Sizes
+
+$panel-s: 56em !default
+$panel-m: 64em !default
+$panel-l: 82em !default
+
+// Settings
+
+// $panel-defaults: (tablet: $panel-s, desk: $panel-m, wide: $panel-l) !default
+$panel-columns: 5 !default
+
+// ----- Panel List ----- //
+
+$panelList-background: darken($c-background, 5%) !default
+$panelList-max: 3 !default
+
+// ----- Paths ----- //
+
+$paths: (ruby #b64526, javascript #daa927, design #36a883, ios #53598b, electives #d87328) !default
+
+// ----- Popover ----- //
+
+$popover-background: $c-invert !default
+$popover-caretSize: 5px !default
+$popover-maxWidth: 275px !default
+$popover-positions: 'bottom', 'left', 'right', 'top' !default
+$popover-title-background: $c-background !default
+
+// ----- Progress ----- //
+
+$progress-background: $c-secondary !default
+$progress-bar-background: $c-highlight !default
+$progress-height: 10px !default
+
+// ----- Progress List ----- //
+
+$progressList-max: 10 !default
+
+// ----- Resource ----- //
+
+$resource-background: $c-subdue !default
+$resource-fileName-background: $c-subdue !default
+$resource-fileName-color: $c-invert !default
+$resource--preview-background: $c-invert !default
+
+// ----- Row ----- //
+
+$row--a-background: darken($c-highlight, 10%) !default
+$row--b-background: $c-invert !default
+
+// ----- Selection ----- //
+
+$selection-background: $c-secondary !default
+$selection-color: $c-base !default
+
+// ----- Select List ----- //
+
+$selectList-item-correct-background: lighten($c-success, 45%) !default
+$selectList-item-correct-color: $c-base !default
+$selectList-item-incorrect-background: lighten($c-error, 45%) !default
+$selectList-item-incorrect-color: $c-base !default
+$selectList-item-link-active-background: darken($card--b-background, 5%) !default
+$selectList-item-link-dot-background: $c-invert !default
+$selectList-item-link-dot-border: 2px $b-borderStyle darken($b-borderColor, 5%) !default
+$selectList-item-link-hover-background: darken($card--b-background, 5%) !default
+$selectList-item-selected-link-dot-background: $c-success !default
+$selectList-item-selected-link-dot-borderColor: $c-success !default
+
+// ----- Session ----- //
+
+$session-logo-borderColor: lighten($c-subdue, 25%) !default
+$session-logo-borderWidth: 1px !default
+$session-logo-color: $c-subdue !default
+$session-menu-link-color: $c-base !default
+$session-menu-width: 230px !default
+$session-toggle-color: $c-base !default
+$session-toggle-width: 40px !default
+
+// ----- Share ----- //
+
+$share-borderColor: #eeeded !default
+$share-borderRadius: 3px !default
+$share-borderWidth: 2px !default
+$share-btn-background: $c-highlight !default
+$share-btn-color: $c-invert !default
+$share-btn-height: 36px !default
+$share-btn--offset-width: 40px !default
+$share-inactive-btn-background: $c-invert !default
+$share-inactive-btn-opacity: 0.75 !default
+$share-outer-borderColor: lighten($c-subdue, 35%) !default
+$share-services: 3 !default
+$share-service-width: 50px !default
+$share-theme: 'dark' !default
+$share-width: 180px !default
+
+// ----- Sponsor List ----- //
+
+$sponsorList-item-body-color: $c-invert !default
+$sponsorList-item-title-color: $c-invert !default
+
+// ----- State ----- //
+
+$state-fade-elements: 'map', 'video', 'panel--instructions', 'wrap'
+$state-fadeInLeftBig-elements: 'wrap-btn'
+$state-tada-elements: 'achievementCard-badge'
+
+// ----- Stat List ----- //
+
+$statList-item-content-border: 1px solid lighten($c-subdue, 35%) !default
+$statList-item-label-color: $c-subdue !default
+
+// ----- Tab List ----- //
+
+$tabList-item-gutter: 2% !default
+$tabList-item-max: 9 !default
+$tabList-item-min: 4 !default
+$tabList-link-active-background: $c-invert !default
+$tabList-link-active-color: $c-base !default
+$tabList-link-background: lighten($c-secondary, 10%) !default
+$tabList-link-borderColor: darken($b-borderColor, 10%) !default
+$tabList-link-color: lighten($c-base, 10%) !default
+$tabList-link-hover-background: $c-invert !default
+$tabList-link-locked-icon-color: lighten($c-base, 10%) !default
+
+// ----- Toggle ----- //
+
+$toggle--fullscreen-color: $c-base !default
+$toggle--fullscreen-hover-color: $c-subdue !default
+$toggle--menu-color: $c-base !default
+$toggle--menu-hover-color: $c-subdue !default
+$toggle-color: $c-base !default
+$toggle-hover-color: $c-subdue !default
+
+// ----- Tooltip ----- //
+
+$tooltip-background: #000 !default
+$tooltip-caretSize: 4px !default
+$tooltip-color: $c-invert !default
+$tooltip-lineHeight: 2.3 !default
+$tooltip-maxWidth: 200px !default
+$tooltip-opacity: 1 !default
+$tooltip-positions: 'bottom', 'left', 'right', 'top' !default
+
+// ----- User ----- //
+
+$user-list-body-color: $c-base !default
+$user-list-title-color: $c-subdue !default
+
+// ----- Video ----- //
+
+$video-maxWidth: 960px !default
+
+// ----- Wrap ----- //
+
+$wrap-hero-backgroundColor: $c-background !default
+$wrap-hero-backgroundImage: 'bg-hero-wrap.svg' !default
+$wrap-hero-backgroundPosition: center bottom !default
+$wrap-hero-backgroundRepeat: no-repeat !default
+$wrap-title-label-color: $c-subdue !default
+
+// ----- z-index ----- //
+
+$zi-base: 10
+$zi-global: 'dropdown-mask', 'badge', 'progress-bar', 'bar--sm', 'dropdown-btn', 'toggle--fullscreen', 'toggle--nav', 'badge-icn', 'pagerNav-list', 'modal-close', 'panel-close', 'panel-fullscreen', 'bar', 'omnibar-btn', 'dropdown-menu', 'flash', 'modal-backdrop', 'modal-dialog', 'modal', 'popover', 'tooltip'

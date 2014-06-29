@@ -1,0 +1,90 @@
+// *************************************
+//
+//   Base
+//   -> Tag-level settings
+//
+// *************************************
+
+.spiral-note
+  background: $c-background
+  color: $c-base
+  font-size: $b-fontSize
+  font-family: $f-base
+  line-height: $b-lineHeight
+
+  .main
+    font-size: 100%
+    min-width: $b-minWidth
+
+  iframe
+    border: 0
+    height: 100%
+    width: 100%
+
+  // -------------------------------------
+  //   Block Content
+  // -------------------------------------
+
+  ul, ol, dl, p
+    margin-bottom: $b-whitespace
+    margin-top: 0
+
+  dd, dt
+    margin: 0
+
+  li
+    margin-bottom: $b-whitespace-s
+    margin-top: 0
+
+  pre, code
+    font-family: $f-mono
+
+  // ----- Headers ----- //
+
+  h1, .h1,
+  h2, .h2,
+  h3, .h3,
+  h4, .h4
+    font-weight: bold
+    line-height: 1.2
+    margin-bottom: $b-whitespace-s
+    margin-top: 0
+
+  h1, .h1
+    font-size: 200%
+
+  h2, .h2
+    font-size: 150%
+
+  h3, .h3
+    font-size: 130%
+
+  h4, .h4
+    font-size: 115%
+
+  // -------------------------------------
+  //   Inline Content
+  // -------------------------------------
+
+  // ----- Links ----- //
+
+  a
+    border-bottom: 1px solid $c-highlight
+    color: $c-highlight
+    text-decoration: none
+    transition: all 0.2s ease-in-out
+    -webkit-transition: all 0.2s ease-in-out
+    &:hover,
+    &:focus
+      border-color: $c-base
+      color: $c-base
+
+  // ----- Selection ----- //
+
+  ::selection
+    background: $selection-background
+    color: $selection-color
+
+  ::-moz-selection
+    background: $selection-background
+    color: $selection-color

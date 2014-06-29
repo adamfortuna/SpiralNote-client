@@ -7,7 +7,9 @@ angular.module('spiralNote').directive 'spiralNote', (snView)->
 
   template: """
     <div class='spiralNote' ng-app='spiralNote'>
-      <sn-editor-left-pane></sn-editor-left-pane>
-      <sn-editor-right-pane></sn-editor-left-pane>
+      <div class='main'>
+        <sn-editor-left-pane></sn-editor-left-pane>
+        <sn-editor-right-pane></sn-editor-left-pane>
+      </div>
     </div>
   """

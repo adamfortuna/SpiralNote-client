@@ -1,0 +1,427 @@
+// *************************************
+//
+//   Utilities
+//   -> Global utilities
+//
+// *************************************
+.spiral-note
+  // ----- Box Sizing ----- //
+
+  .boxSizing
+    -moz-box-sizing: border-box
+    box-sizing: border-box
+
+  // ----- Card Reset ----- //
+
+  .cardReset
+    background: none
+    box-shadow: none
+    padding: 0
+
+  // ----- Debug ----- //
+
+  .debug
+    background-color: pink !important
+
+  // ----- Ellipsis ----- //
+
+  .ellipsis
+    overflow: hidden
+    text-overflow: ellipsis
+    white-space: nowrap
+
+  // ----- Faux Hide ----- //
+
+  .fauxHide
+    height: 0
+    opacity: 0
+    overflow: hidden
+    visibility: hidden
+
+  // ----- Faux Show ----- //
+
+  .fauxShow
+    height: auto
+    opacity: 1
+    overflow: visible
+    visibility: visible
+
+  // ----- Clearfix ----- //
+
+  .group::after
+    clear: both
+    content: ''
+    display: table
+
+  // ----- Inline Code ----- //
+
+  .inlineCode
+    @extend .ram
+    background: $objective-body-code-background
+    border: $objective-body-code-border
+    color: $objective-body-code-color
+    font-size: 90%
+    padding: 0.15em 0.35em
+
+  // ----- Image Replacement ----- //
+
+  .ir
+    background-color: transparent
+    border: 0
+    overflow: hidden
+    &::before
+      content: ''
+      display: block
+      width: 0
+      height: 150%
+
+  // ----- Vertical/Horizontal Align ----- //
+
+  .middle
+    +transform(translate(-50%, -50%))
+    left: 50%
+    position: absolute
+    top: 50%
+
+  // ----- Semantic Hide ----- //
+
+  .srt
+    border: 0
+    clip: rect(0 0 0 0)
+    height: 1px
+    margin: -1px
+    overflow: hidden
+    padding: 0
+    position: absolute
+    width: 1px
+
+  // ----- Stretch ----- //
+
+  .stretch
+    bottom: 0
+    left: 0
+    position: absolute
+    right: 0
+    top: 0
+
+  // ----- Vertical Align ----- //
+
+  .valign
+    +transform(translateY(-50%))
+    position: relative
+    top: 50%
+
+  // -------------------------------------
+  //   Background
+  // -------------------------------------
+
+  .bcb
+    background: $c-base
+  .bch
+    background: $c-highlight
+  .bci
+    background: $c-invert
+  .bcs
+    background: $c-subdue
+
+  // -------------------------------------
+  //   Borders
+  // -------------------------------------
+
+  .bdr
+    border: $b-border
+  .bdrcb
+    border-color: $c-base
+  .bdrb
+    border-bottom: $b-border
+  .bdrl
+    border-left: $b-border
+  .bdrr
+    border-right: $b-border
+  .bdrt
+    border-top: $b-border
+  .bdrn
+    border: 0
+
+  // -------------------------------------
+  //   Box Shadows
+  // -------------------------------------
+
+  .bx
+    box-shadow: $b-boxShadow
+  .bxi
+    box-shadow: 0 -1px 1px rgba(#000, 0.2)
+
+  // -------------------------------------
+  //   Display
+  // -------------------------------------
+
+  .db
+    display: block
+  .di
+    display: inline
+  .dib
+    display: inline-block
+  .dn
+    display: none
+
+  // -------------------------------------
+  //   List
+  // -------------------------------------
+
+  .lr
+    list-style-type: none
+    margin: 0
+    padding: 0
+
+  // -------------------------------------
+  //   Margins
+  // -------------------------------------
+
+  // ----- All ----- //
+
+  .mas
+    margin: 0.5 * $b-whitespace
+  .mam
+    margin: $b-whitespace
+
+  // ----- Bottom ----- //
+
+  .mbf
+    margin-bottom: 0
+  .mbxs
+    margin-bottom: $b-whitespace-xs
+  .mbs
+    margin-bottom: $b-whitespace-s
+  .mbm
+    margin-bottom: $b-whitespace
+  .mbl
+    margin-bottom: $b-whitespace-l
+  .mbxl
+    margin-bottom: $b-whitespace-xl
+
+  // ----- Horizontal ----- //
+
+  .mhc
+    margin-left: auto
+    margin-right: auto
+
+  // ----- Left ----- //
+
+  .mlf
+    margin-left: 0
+  .mlxs
+    margin-left: $b-whitespace-xs
+  .mls
+    margin-left: $b-whitespace-s
+  .mlm
+    margin-left: $b-whitespace
+
+  // ----- Right ----- //
+
+  .mrf
+    margin-right: 0
+  .mrxs
+    margin-right: $b-whitespace-xs
+  .mrs
+    margin-right: $b-whitespace-s
+  .mrm
+    margin-right: $b-whitespace
+  .mrl
+    margin-right: $b-whitespace-l
+
+  // ----- Top ----- //
+
+  .mtf
+    margin-top: 0
+  .mtxs
+    margin-top: $b-whitespace-xs
+  .mts
+    margin-top: $b-whitespace-s
+  .mtm
+    margin-top: $b-whitespace
+  .mtl
+    margin-top: $b-whitespace-l
+  .mtxl
+    margin-top: $b-whitespace-xl
+
+  // -------------------------------------
+  //   Padding
+  // -------------------------------------
+
+  // ----- All ----- //
+
+  .paxs
+    padding: $b-whitespace-xs
+  .pas
+    padding: $b-whitespace-s
+  .pam
+    padding: $b-whitespace
+
+  // ----- Bottom ----- //
+
+  .pbf
+    padding-bottom: 0
+  .pbs
+    padding-bottom: $b-whitespace-s
+  .pbm
+    padding-bottom: $b-whitespace
+  .pbl
+    padding-bottom: $b-whitespace-l
+  .pbxl
+    padding-bottom: $b-whitespace-xl
+
+  // ----- Left ----- //
+
+  .plf
+    padding-left: 0
+  .plxs
+    padding-left: $b-whitespace-xs
+  .pls
+    padding-left: $b-whitespace-s
+  .plm
+    padding-left: $b-whitespace
+  .pll
+    padding-left: $b-whitespace-l
+  .plxl
+    padding-left: $b-whitespace-xl
+
+  // ----- Right ----- //
+
+  .prf
+    padding-right: 0
+  .prxs
+    padding-right: $b-whitespace-xs
+  .prs
+    padding-right: $b-whitespace-s
+  .prm
+    padding-right: $b-whitespace
+  .prl
+    padding-right: $b-whitespace-l
+  .prxl
+    padding-right: $b-whitespace-xl
+
+  // ----- Top ----- //
+
+  .ptf
+    padding-top: 0
+  .pts
+    padding-top: 0.5 * $b-whitespace
+  .ptm
+    padding-top: $b-whitespace
+  .ptl
+    padding-top: 2 * $b-whitespace
+
+  // -------------------------------------
+  //   Positioning
+  // -------------------------------------
+
+  .fl
+    float: left
+  .fr
+    float: right
+  .fn
+    float: none
+
+  .poa
+    position: absolute
+  .pof
+    position: fixed
+  .por
+    position: relative
+  .pos
+    position: static
+
+  .potf
+    top: 0
+  .porf
+    right: 0
+  .pobf
+    bottom: 0
+  .polf
+    left: 0
+
+  .polm
+    left: $b-whitespace
+  .porm
+    right: $b-whitespace
+
+  // -------------------------------------
+  //   Rounding
+  // -------------------------------------
+
+  .ra
+    border-radius: 50%
+  .ram
+    border-radius: $b-borderRadius
+  .ran
+    border-radius: 0
+
+  // -------------------------------------
+  //   Text
+  // -------------------------------------
+
+  // ----- Alignment ----- //
+
+  .tac
+    text-align: center
+  .tal
+    text-align: left
+  .tar
+    text-align: right
+
+  // ----- Color ----- //
+
+  .tcb
+    color: $c-base
+  .tce
+    color: $c-error
+  .tch
+    color: $c-highlight
+  .tci
+    color: $c-invert
+  .tcs
+    color: $c-subdue
+  .tcu
+    color: $c-success
+
+  // ----- Family ----- //
+
+  .tfb
+    font-family: $f-base
+  .tfh
+    font-family: $f-header
+  .tfl
+    font-family: $f-light
+  .tfm
+    font-family: $f-mono
+
+  // ----- Size ----- //
+
+  .tsxs
+    font-size: $b-fontSize-xs
+  .tss
+    font-size: $b-fontSize-s
+  .tsm
+    font-size: $b-fontSize-m
+  .tsl
+    font-size: $b-fontSize-l
+
+  // ----- Style ----- //
+
+  .tsi
+    font-style: italic
+  .tsn
+    font-style: normal
+
+  // ----- Transform ----- //
+
+  .ttu
+    text-transform: uppercase
+
+  // ----- Weight ----- //
+
+  .twn
+    font-weight: normal
+  .twb
+    font-weight: bold
