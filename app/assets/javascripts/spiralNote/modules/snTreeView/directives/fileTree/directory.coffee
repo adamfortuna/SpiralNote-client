@@ -10,7 +10,7 @@ angular.module('sn:treeView').directive 'snTreeViewDirectory', ($compile)->
           <i class="fa fa-folder-o"></i>
           {{directory.name}}
         </a>
-      <h3>
+      </h3>
       <ul ng-show='!collapse'></ul>
     </li>
   """
