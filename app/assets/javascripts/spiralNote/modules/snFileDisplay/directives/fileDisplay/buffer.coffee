@@ -1,14 +1,14 @@
-angular.module("sn:fileDisplay").directive "snFileBuffer", ($timeout, snApi)->
+angular.module("sn:fileDisplay").directive "snFileDisplayBuffer", ($timeout, snApi)->
   replace: true
   restrict: "E"
-  scope: {}
+  scope: true
   template: """
     <div class="sn-fileBuffer">
       <textarea></textarea>
       <div class="bg-overlay"></div>
     </div>
   """
-  link: (scope, element, attrs)->
+  link: (scope, element, attrs)->    
     autoModeForPath = (path)->
       pathArr = path.split(".")
       extension = pathArr[pathArr.length - 1]
@@ -44,16 +44,19 @@ angular.module("sn:fileDisplay").directive "snFileBuffer", ($timeout, snApi)->
     
     $timeout ->
       scope.textEditor.refresh()
+    
+    snApi.file.read(scope.file.path).then (fileData)->
+      scope.textEditor.setValue(fileData.content)
 
-    snApi.event.on 'file:selected', (data)->
-      scope.filePath = data.path
-      autoModeForPath(scope.filePath)
-      
-      # Make api call to read the specified file. I'll need to figure out some sort
-      # of client caching so we don't refetch and overwrite the browser content
-      # until after a save or something.
-      snApi.file.read(data.path).then (fileData)->
-        scope.textEditor.setValue(fileData.content)
+    # snApi.event.on 'file:selected', (data)->
+    #   scope.filePath = data.path
+    #   autoModeForPath(scope.filePath)
+    #   
+    #   # Make api call to read the specified file. I'll need to figure out some sort
+    #   # of client caching so we don't refetch and overwrite the browser content
+    #   # until after a save or something.
+    #   snApi.file.read(data.path).then (fileData)->
+    #     scope.textEditor.setValue(fileData.content)
     
     # scope.save = ->
     #   snSocket.func "fsSaveFileBuffer", {path: scope.filePath, contents: scope.textEditor.getValue()}

@@ -14,7 +14,7 @@ angular.module('sn:treeView').directive 'snTreeViewFile', (snApi)->
   link: (scope, element, attrs)->
     
     scope.showFile = ->
-      snApi.event.emit 'file:selected', {path: scope.file.path, fileName: scope.file}
+      snApi.event.emit 'file:selected', {path: scope.file.path, fileName: scope.file.name}
         
     snApi.event.on 'file:selected', (data)->
       if scope.file.path == data.path

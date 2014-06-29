@@ -2,12 +2,16 @@ angular.module("sn:fileDisplay").directive "snFileDisplay", (snSocket, $rootScop
   replace: true
   restrict: "E"
   scope: {}
+  controller: ($scope)->
+    $scope.activeFilePath = null
+    $scope.files = []
+
   template: """
     <div class="sn-fileDisplay">
-      <sn-fileDisplay-tabs></sn-fileDisplay-tabs>
-      <sn-fileDisplay-views></sn-fileDisplay-views>
-      <sn-file-buffer></sn-file-buffer>
+      <sn-file-display-tabs></sn-file-display-tabs>
+      <sn-file-display-views></sn-file-display-views>
     </div>
   """
   link: (scope, element, attrs)->
+    
     

@@ -1,18 +1,42 @@
 .sn-fileDisplay
-  position: absolute
-  top: 0
-  left: 0
-  right: 0
-  bottom: 0
-  overflow: auto
-  background: #fff
-  border: 1px solid #eee
-  .bg-overlay
-    width: 28px
-    background-color: #f7f7f7
-    border-right: 1px solid #ddd
+  .sn-fileDisplay--tabList
+    padding: 0
+    margin: 0 0 0 2px
+    border-bottom: 1px solid #aaa
+    .sn-fileDisplay--tab
+      display: inline-block
+      list-style: 'none'
+      margin: 0
+      padding: 0
+      background-color: #fff
+      border: 1px solid #ddd
+      &.is-selected
+        background-color: #ddd
+      a 
+        color: #666
+        display: inline-block
+        text-decoration: none
+        border: none
+      a:first-child
+        padding: 5px 5px 5px 10px
+      a:last-child
+        padding: 5px 10px 5px 0
+  
+  .sn-fileBuffer
     position: absolute
-    top: 0
+    top: 35px
+    left: 0
+    right: 0
     bottom: 0
-  .CodeMirror
-    height: auto
+    overflow: auto
+    background: #fff
+    border: 1px solid #eee
+    .bg-overlay
+      width: 28px
+      background-color: #f7f7f7
+      border-right: 1px solid #ddd
+      position: absolute
+      top: 0
+      bottom: 0
+    .CodeMirror
+      height: auto
