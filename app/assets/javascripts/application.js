@@ -5,6 +5,7 @@
 //= require vendor/angular-ui-router
 //= require vendor/angular-sanitize
 //= require vendor/codemirror
+//= require_tree ./vendor/codemirror
 //= require vendor/cs_console
 //= require vendor/socket.io
 //= require vendor/underscore
