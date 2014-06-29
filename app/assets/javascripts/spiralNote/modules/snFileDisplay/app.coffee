@@ -1,5 +1,5 @@
 angular.module('sn:fileDisplay', ['sn:core']).config (snApiProvider)->
-  snApiProvider.exposeToApi
+  snApiProvider.exposeToApi (api, injector)->
     fileDisplay:
-      active: ->
-        # Tie in a service class here for this module's api
+      saveActive: ->
+        injector.get('snFileDisplay').saveActiveBuffer()

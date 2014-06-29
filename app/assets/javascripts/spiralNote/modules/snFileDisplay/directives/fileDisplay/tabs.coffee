@@ -12,7 +12,7 @@ angular.module("sn:fileDisplay").directive "snFileDisplayTabs", ($timeout, snApi
       </ul>
     </div>
   """
-  link: (scope, elements, attrs)->    
+  link: (scope, element, attrs)->    
     scope.isSelected = (file)->
       file.path == scope.activeFilePath
 

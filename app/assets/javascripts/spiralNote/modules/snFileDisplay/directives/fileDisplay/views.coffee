@@ -1,4 +1,4 @@
-angular.module("sn:fileDisplay").directive "snFileDisplayViews", ($timeout, snApi)->
+angular.module("sn:fileDisplay").directive "snFileDisplayViews", ($timeout, snApi, snFileDisplay)->
   replace: true
   restrict: "E"
   scope: true
@@ -9,10 +9,19 @@ angular.module("sn:fileDisplay").directive "snFileDisplayViews", ($timeout, snAp
       </div>
     </div>
   """
-  link: (scope, elements, attrs)->
-    
+  link: (scope, element, attrs)->
+    getBuffer = (path)->
+      matchingBufferEl = _.find element.find('.sn-fileBuffer'), (el)->
+        angular.element(el).scope().file.path == path
+      
+      angular.element(matchingBufferEl).scope().textEditor
+
     scope.isActive = (file)->
       file.path == scope.activeFilePath
     
     snApi.event.on 'fileDisplay:activate', (data)->
       scope.activeFilePath = data.path
+      $timeout ->
+        snFileDisplay.setActiveFile(data.path, data.fileName, getBuffer(data.path))
+      ,
+        300

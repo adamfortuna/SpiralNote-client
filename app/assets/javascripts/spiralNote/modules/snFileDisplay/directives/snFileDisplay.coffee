@@ -1,4 +1,4 @@
-angular.module("sn:fileDisplay").directive "snFileDisplay", (snSocket, $rootScope, $timeout)->
+angular.module("sn:fileDisplay").directive "snFileDisplay", ($timeout, snApi)->
   replace: true
   restrict: "E"
   scope: {}
@@ -12,6 +12,4 @@ angular.module("sn:fileDisplay").directive "snFileDisplay", (snSocket, $rootScop
       <sn-file-display-views></sn-file-display-views>
     </div>
   """
-  link: (scope, element, attrs)->
-    
     

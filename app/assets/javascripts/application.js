@@ -9,6 +9,7 @@
 //= require vendor/cs_console
 //= require vendor/socket.io
 //= require vendor/underscore
+//= require vendor/keymaster
 //=require app/app
 //=require app/routes
 //=require_tree ./spiralNote/
