@@ -37,11 +37,11 @@ angular.module('sn:treeView').directive 'snTreeViewDirectory', ($compile, snApi)
       fileList.append($compile(newEl)(childScope))
     
     scope.selectDirectory = ->
-      scope.collapse = !scope.collapse
       snApi.event.emit('directory:selected', {path: scope.directory.path, dirName: scope.directory.name})
     
     snApi.event.on 'directory:selected', (data)->
       if scope.directory.path == data.path
+        scope.collapse = !scope.collapse
         scope.selected = true
       else
         scope.selected = false

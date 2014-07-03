@@ -1,6 +1,11 @@
 angular.module('sn:core').factory 'snEventHandler', ->
   class SnEventHandler
     events = {}
+    recordedEvents = {}
+    record = false
+    timer = null
+    time = 0
+    playing = false
     
     on: (eventName, callback)=>
       events[eventName] ||= []
@@ -26,7 +31,9 @@ angular.module('sn:core').factory 'snEventHandler', ->
       
       null
 
-    emit: (eventName, data)->
+    emit: (eventName, data)=>
+      if record then @recordEvent(eventName, data)
+
       return unless events[eventName]
   
       _.each events[eventName], (callback)->
@@ -34,4 +41,40 @@ angular.module('sn:core').factory 'snEventHandler', ->
       
       true
       
+    recordEvent: (eventName, data)->
+      recordedEvents[time] ||= []
+      recordedEvents[time].push({eventName: eventName, data: data})
+      
+    setTime: ->
+      time += 1
+      
+    timerStart: =>
+      timer = window.setInterval(@setTime, 100)
+    
+    timerStop: ->
+      clearInterval(timer)
+    
+    toggleRecord: =>
+      record = !record
+      if record
+        @timerStart()
+      else
+        @timerStop()
+    
+    playing: ->
+      playing
+    
+    playback: =>
+      playing = true
+      t = 0
+      @emit "content:play"
+      
+      window.setInterval ->
+        _.each recordedEvents[t], (evt)->
+          if evt
+            _.each events[evt.eventName], (callback)->
+              callback(evt.data)
+        t += 1
+      , 
+        100
     

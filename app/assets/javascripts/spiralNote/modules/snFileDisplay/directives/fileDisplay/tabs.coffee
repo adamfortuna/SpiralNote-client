@@ -41,6 +41,7 @@ angular.module("sn:fileDisplay").directive "snFileDisplayTabs", ($timeout, snApi
         scope.savedFiles[data.path] = true
         scope.files.push(newFile)
         scope.activate(newFile)
+        scope.$apply()
     
     snApi.event.on 'fileDisplay:file:saved', (data)->
       scope.savedFiles[data.path] = true

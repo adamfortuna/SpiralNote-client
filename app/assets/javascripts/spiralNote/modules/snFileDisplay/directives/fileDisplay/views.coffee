@@ -13,15 +13,17 @@ angular.module("sn:fileDisplay").directive "snFileDisplayViews", ($timeout, snAp
     getBuffer = (path)->
       matchingBufferEl = _.find element.find('.sn-fileBuffer'), (el)->
         angular.element(el).scope().file.path == path
-      
       angular.element(matchingBufferEl).scope().textEditor
 
     scope.isActive = (file)->
       file.path == scope.activeFilePath
     
     snApi.event.on 'fileDisplay:activate', (data)->
+      console.log("activate")
+      console.log(data)
+      console.log('--')
       scope.activeFilePath = data.path
-      $timeout ->
-        snFileDisplay.setActiveFile(data.path, data.fileName, getBuffer(data.path))
-      ,
-        300
+      # $timeout ->
+      #   snFileDisplay.setActiveFile(data.path, data.fileName, getBuffer(data.path))
+      # ,
+      #   700

@@ -48,17 +48,31 @@ angular.module("sn:fileDisplay").directive "snFileDisplayBuffer", ($timeout, snA
     $timeout ->
       scope.textEditor.refresh()
       
-    scope.textEditor.on 'change', ->
+    scope.textEditor.on 'change', (cm, changeObj)->
+      return if changeObj.origin == 'PLAY'
+
+      snApi.event.emit 'fileDisplay:change', {path: scope.file.path, fileName: scope.file.fileName, changes: changeObj}
       if scope.saved && firstLoadFinished
         snApi.event.emit 'fileDisplay:file:dirty', {path: scope.file.path, fileName: scope.file.fileName}
         scope.saved = false
       else
         firstLoadFinished = true
         scope.saved = true
+    
+    playBackContent = (data)->
+      console.log(data.changes)
+      scope.textEditor.replaceRange(data.changes.text, data.changes.from, data.changes.to, "PLAY")
+      scope.textEditor.refresh()
+    
+    if snApi.event.playing()
+      scope.playing = true
+      console.log('activate')
+      snApi.event.on 'fileDisplay:change', playBackContent
       
     snApi.event.on 'fileDisplay:file:saved', (data)->
       if data.path == scope.file.path
         scope.saved = true
-    
-    snApi.file.read(scope.file.path).then (fileData)->
-      scope.textEditor.setValue(fileData.content)
+
+    unless snApi.event.playing()
+      snApi.file.read(scope.file.path).then (fileData)->
+        scope.textEditor.setValue(fileData.content)
