@@ -1,0 +1,4 @@
+<span>
+  <i ng-if="file.type==='directory'" ng-class="{'fa fa-caret-down': file.expanded, 'fa fa-caret-right': !file.expanded}"></i>
+  <i ng-class="{'fa fa-file-text-o': file.type==='file', 'fa fa-folder-o': file.type==='directory'}"></i>
+</span>

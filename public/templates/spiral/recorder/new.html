@@ -1,0 +1,9 @@
+<div>
+  <spiral-recorder-record workspace='workspace' recording='recording'></spiral-recorder-record>
+
+  <div ng-if='recording.changes'>
+    <spiral-recorder-play workspace='workspace' recording='recording'></spiral-recorder-play>
+    <input type='text' ng-model='recording.name' placeholder='Name Your Recording' />
+    <button ng-click='createRecording()'>Create New Recording</button>
+  </div>
+</div>

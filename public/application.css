@@ -1,0 +1,1612 @@
+/* BASICS */
+/* line 4, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/codemirror.scss */
+.CodeMirror {
+  /* Set height, width, borders, and global font properties here */
+  font-family: monospace;
+  height: 100% !important;
+}
+
+/* line 9, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/codemirror.scss */
+.CodeMirror-scroll {
+  /* Set scrolling behaviour here */
+  overflow: auto;
+}
+
+/* PADDING */
+/* line 16, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/codemirror.scss */
+.CodeMirror-lines {
+  padding: 4px 0;
+  /* Vertical padding around content */
+}
+
+/* line 19, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/codemirror.scss */
+.CodeMirror pre {
+  padding: 0 4px;
+  /* Horizontal padding of content */
+}
+
+/* line 23, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/codemirror.scss */
+.CodeMirror-scrollbar-filler, .CodeMirror-gutter-filler {
+  background-color: white;
+  /* The little square between H and V scrollbars */
+}
+
+/* GUTTER */
+/* line 29, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/codemirror.scss */
+.CodeMirror-gutters {
+  border-right: 1px solid #ddd;
+  background-color: #f7f7f7;
+  white-space: nowrap;
+}
+
+/* line 35, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/codemirror.scss */
+.CodeMirror-linenumber {
+  padding: 0 3px 0 5px;
+  min-width: 20px;
+  text-align: right;
+  color: #999;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+/* CURSOR */
+/* line 46, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/codemirror.scss */
+.CodeMirror div.CodeMirror-cursor {
+  border-left: 1px solid black;
+}
+
+/* Shown when moving in bi-directional text */
+/* line 50, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/codemirror.scss */
+.CodeMirror div.CodeMirror-secondarycursor {
+  border-left: 1px solid silver;
+}
+
+/* line 53, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/codemirror.scss */
+.CodeMirror.cm-keymap-fat-cursor div.CodeMirror-cursor {
+  width: auto;
+  border: 0;
+  background: #7e7;
+}
+
+/* Can style cursor different in overwrite (non-insert) mode */
+/* line 61, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/codemirror.scss */
+.cm-tab {
+  display: inline-block;
+}
+
+/* line 63, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/codemirror.scss */
+.CodeMirror-ruler {
+  border-left: 1px solid #ccc;
+  position: absolute;
+}
+
+/* DEFAULT THEME */
+/* line 70, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/codemirror.scss */
+.cm-s-default .cm-keyword {
+  color: #708;
+}
+
+/* line 71, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/codemirror.scss */
+.cm-s-default .cm-atom {
+  color: #219;
+}
+
+/* line 72, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/codemirror.scss */
+.cm-s-default .cm-number {
+  color: #164;
+}
+
+/* line 73, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/codemirror.scss */
+.cm-s-default .cm-def {
+  color: #00f;
+}
+
+/* line 78, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/codemirror.scss */
+.cm-s-default .cm-variable-2 {
+  color: #05a;
+}
+
+/* line 79, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/codemirror.scss */
+.cm-s-default .cm-variable-3 {
+  color: #085;
+}
+
+/* line 80, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/codemirror.scss */
+.cm-s-default .cm-comment {
+  color: #a50;
+}
+
+/* line 81, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/codemirror.scss */
+.cm-s-default .cm-string {
+  color: #a11;
+}
+
+/* line 82, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/codemirror.scss */
+.cm-s-default .cm-string-2 {
+  color: #f50;
+}
+
+/* line 83, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/codemirror.scss */
+.cm-s-default .cm-meta {
+  color: #555;
+}
+
+/* line 84, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/codemirror.scss */
+.cm-s-default .cm-qualifier {
+  color: #555;
+}
+
+/* line 85, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/codemirror.scss */
+.cm-s-default .cm-builtin {
+  color: #30a;
+}
+
+/* line 86, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/codemirror.scss */
+.cm-s-default .cm-bracket {
+  color: #997;
+}
+
+/* line 87, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/codemirror.scss */
+.cm-s-default .cm-tag {
+  color: #170;
+}
+
+/* line 88, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/codemirror.scss */
+.cm-s-default .cm-attribute {
+  color: #00c;
+}
+
+/* line 89, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/codemirror.scss */
+.cm-s-default .cm-header {
+  color: blue;
+}
+
+/* line 90, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/codemirror.scss */
+.cm-s-default .cm-quote {
+  color: #090;
+}
+
+/* line 91, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/codemirror.scss */
+.cm-s-default .cm-hr {
+  color: #999;
+}
+
+/* line 92, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/codemirror.scss */
+.cm-s-default .cm-link {
+  color: #00c;
+}
+
+/* line 94, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/codemirror.scss */
+.cm-negative {
+  color: #d44;
+}
+
+/* line 95, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/codemirror.scss */
+.cm-positive {
+  color: #292;
+}
+
+/* line 96, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/codemirror.scss */
+.cm-header, .cm-strong {
+  font-weight: bold;
+}
+
+/* line 97, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/codemirror.scss */
+.cm-em {
+  font-style: italic;
+}
+
+/* line 98, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/codemirror.scss */
+.cm-link {
+  text-decoration: underline;
+}
+
+/* line 100, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/codemirror.scss */
+.cm-s-default .cm-error {
+  color: #f00;
+}
+
+/* line 101, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/codemirror.scss */
+.cm-invalidchar {
+  color: #f00;
+}
+
+/* line 103, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/codemirror.scss */
+div.CodeMirror span.CodeMirror-matchingbracket {
+  color: #0f0;
+}
+
+/* line 104, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/codemirror.scss */
+div.CodeMirror span.CodeMirror-nonmatchingbracket {
+  color: #f22;
+}
+
+/* line 105, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/codemirror.scss */
+.CodeMirror-activeline-background {
+  background: #e8f2ff;
+}
+
+/* STOP */
+/* The rest of this file contains styles related to the mechanics of
+   the editor. You probably shouldn't touch them. */
+/* line 112, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/codemirror.scss */
+.CodeMirror {
+  line-height: 1;
+  position: relative;
+  overflow: hidden;
+  background: white;
+  color: black;
+}
+
+/* line 120, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/codemirror.scss */
+.CodeMirror-scroll {
+  /* 30px is the magic margin used to hide the element's real scrollbars */
+  /* See overflow: hidden in .CodeMirror */
+  margin-bottom: -30px;
+  margin-right: -30px;
+  padding-bottom: 30px;
+  height: 100%;
+  outline: none;
+  /* Prevent dragging from highlighting the element */
+  position: relative;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+/* line 131, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/codemirror.scss */
+.CodeMirror-sizer {
+  position: relative;
+  border-right: 30px solid transparent;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+/* The fake, visible scrollbars. Used to force redraw during scrolling
+   before actuall scrolling happens, thus preventing shaking and
+   flickering artifacts. */
+/* line 141, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/codemirror.scss */
+.CodeMirror-vscrollbar, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-gutter-filler {
+  position: absolute;
+  z-index: 6;
+  display: none;
+}
+
+/* line 146, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/codemirror.scss */
+.CodeMirror-vscrollbar {
+  right: 0;
+  top: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+/* line 151, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/codemirror.scss */
+.CodeMirror-hscrollbar {
+  bottom: 0;
+  left: 0;
+  overflow-y: hidden;
+  overflow-x: scroll;
+}
+
+/* line 156, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/codemirror.scss */
+.CodeMirror-scrollbar-filler {
+  right: 0;
+  bottom: 0;
+}
+
+/* line 159, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/codemirror.scss */
+.CodeMirror-gutter-filler {
+  left: 0;
+  bottom: 0;
+}
+
+/* line 163, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/codemirror.scss */
+.CodeMirror-gutters {
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding-bottom: 30px;
+  z-index: 3;
+}
+
+/* line 168, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/codemirror.scss */
+.CodeMirror-gutter {
+  white-space: normal;
+  height: 100%;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  padding-bottom: 30px;
+  margin-bottom: -32px;
+  display: inline-block;
+  /* Hack to make IE7 behave */
+  *zoom: 1;
+  *display: inline;
+}
+
+/* line 180, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/codemirror.scss */
+.CodeMirror-gutter-elt {
+  position: absolute;
+  cursor: default;
+  z-index: 4;
+}
+
+/* line 186, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/codemirror.scss */
+.CodeMirror-lines {
+  cursor: text;
+}
+
+/* line 189, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/codemirror.scss */
+.CodeMirror pre {
+  /* Reset some styles that the rest of the page might have set */
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  border-width: 0;
+  background: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  margin: 0;
+  white-space: pre;
+  word-wrap: normal;
+  line-height: inherit;
+  color: inherit;
+  z-index: 2;
+  position: relative;
+  overflow: visible;
+}
+
+/* line 205, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/codemirror.scss */
+.CodeMirror-wrap pre {
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  word-break: normal;
+}
+
+/* line 211, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/codemirror.scss */
+.CodeMirror-linebackground {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 0;
+}
+
+/* line 217, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/codemirror.scss */
+.CodeMirror-linewidget {
+  position: relative;
+  z-index: 2;
+  overflow: auto;
+}
+
+/* line 225, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/codemirror.scss */
+.CodeMirror-wrap .CodeMirror-scroll {
+  overflow-x: hidden;
+}
+
+/* line 229, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/codemirror.scss */
+.CodeMirror-measure {
+  position: absolute;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+/* line 236, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/codemirror.scss */
+.CodeMirror-measure pre {
+  position: static;
+}
+
+/* line 238, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/codemirror.scss */
+.CodeMirror div.CodeMirror-cursor {
+  position: absolute;
+  border-right: none;
+  width: 0;
+}
+
+/* line 244, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/codemirror.scss */
+div.CodeMirror-cursors {
+  visibility: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+/* line 249, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/codemirror.scss */
+.CodeMirror-focused div.CodeMirror-cursors {
+  visibility: visible;
+}
+
+/* line 253, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/codemirror.scss */
+.CodeMirror-selected {
+  background: #d9d9d9;
+}
+
+/* line 254, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/codemirror.scss */
+.CodeMirror-focused .CodeMirror-selected {
+  background: #d7d4f0;
+}
+
+/* line 255, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/codemirror.scss */
+.CodeMirror-crosshair {
+  cursor: crosshair;
+}
+
+/* line 257, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/codemirror.scss */
+.cm-searching {
+  background: #ffa;
+  background: rgba(255, 255, 0, 0.4);
+}
+
+/* IE7 hack to prevent it from returning funny offsetTops on the spans */
+/* line 263, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/codemirror.scss */
+.CodeMirror span {
+  *vertical-align: text-bottom;
+}
+
+/* Used to force a border model for a node */
+/* line 266, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/codemirror.scss */
+.cm-force-border {
+  padding-right: .1px;
+}
+
+@media print {
+  /* Hide the cursor when printing */
+  /* line 270, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/codemirror.scss */
+  .CodeMirror div.CodeMirror-cursors {
+    visibility: hidden;
+  }
+}
+/*! normalize.css v3.0.0 | MIT License | git.io/normalize */
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+/* line 10, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_reset.scss */
+.spiralNote {
+  font-family: sans-serif;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  /**
+   * Remove default margin.
+   */
+  /* HTML5 display definitions
+     ========================================================================== */
+  /**
+   * Correct `block` display not defined in IE 8/9.
+   */
+  /**
+   * 1. Correct `inline-block` display not defined in IE 8/9.
+   * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+   */
+  /**
+   * Prevent modern browsers from displaying `audio` without controls.
+   * Remove excess height in iOS 5 devices.
+   */
+  /**
+   * Address `[hidden]` styling not present in IE 8/9.
+   * Hide the `template` element in IE, Safari, and Firefox < 22.
+   */
+  /* Links
+     ========================================================================== */
+  /**
+   * Remove the gray background color from active links in IE 10.
+   */
+  /**
+   * Improve readability when focused and also mouse hovered in all browsers.
+   */
+  /* Text-level semantics
+     ========================================================================== */
+  /**
+   * Address styling not present in IE 8/9, Safari 5, and Chrome.
+   */
+  /**
+   * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+   */
+  /**
+   * Address styling not present in Safari 5 and Chrome.
+   */
+  /**
+   * Address variable `h1` font-size and margin within `section` and `article`
+   * contexts in Firefox 4+, Safari 5, and Chrome.
+   */
+  /**
+   * Address styling not present in IE 8/9.
+   */
+  /**
+   * Address inconsistent and variable font size in all browsers.
+   */
+  /**
+   * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+   */
+  /* Embedded content
+     ========================================================================== */
+  /**
+   * Remove border when inside `a` element in IE 8/9.
+   */
+  /**
+   * Correct overflow displayed oddly in IE 9.
+   */
+  /* Grouping content
+     ========================================================================== */
+  /**
+   * Address margin not present in IE 8/9 and Safari 5.
+   */
+  /**
+   * Address differences between Firefox and other browsers.
+   */
+  /**
+   * Contain overflow in all browsers.
+   */
+  /**
+   * Address odd `em`-unit font size rendering in all browsers.
+   */
+  /* Forms
+     ========================================================================== */
+  /**
+   * Known limitation: by default, Chrome and Safari on OS X allow very limited
+   * styling of `select`, unless a `border` property is set.
+   */
+  /**
+   * 1. Correct color not being inherited.
+   *    Known issue: affects color of disabled elements.
+   * 2. Correct font properties not being inherited.
+   * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
+   */
+  /**
+   * Address `overflow` set to `hidden` in IE 8/9/10.
+   */
+  /**
+   * Address inconsistent `text-transform` inheritance for `button` and `select`.
+   * All other form control elements do not inherit `text-transform` values.
+   * Correct `button` style inheritance in Firefox, IE 8+, and Opera
+   * Correct `select` style inheritance in Firefox.
+   */
+  /**
+   * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+   *    and `video` controls.
+   * 2. Correct inability to style clickable `input` types in iOS.
+   * 3. Improve usability and consistency of cursor style between image-type
+   *    `input` and others.
+   */
+  /**
+   * Re-set default cursor for disabled elements.
+   */
+  /**
+   * Remove inner padding and border in Firefox 4+.
+   */
+  /**
+   * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+   * the UA stylesheet.
+   */
+  /**
+   * It's recommended that you don't attempt to style these elements.
+   * Firefox's implementation doesn't respect box-sizing, padding, or width.
+   *
+   * 1. Address box sizing set to `content-box` in IE 8/9/10.
+   * 2. Remove excess padding in IE 8/9/10.
+   */
+  /**
+   * Fix the cursor style for Chrome's increment/decrement buttons. For certain
+   * `font-size` values of the `input`, it causes the cursor style of the
+   * decrement button to change from `default` to `text`.
+   */
+  /**
+   * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+   * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+   *    (include `-moz` to future-proof).
+   */
+  /**
+   * Remove inner padding and search cancel button in Safari and Chrome on OS X.
+   * Safari (but not Chrome) clips the cancel button when the search input has
+   * padding (and `textfield` appearance).
+   */
+  /**
+   * Define consistent border, margin, and padding.
+   */
+  /**
+   * 1. Correct `color` not being inherited in IE 8/9.
+   * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+   */
+  /**
+   * Remove default vertical scrollbar in IE 8/9.
+   */
+  /**
+   * Don't inherit the `font-weight` (applied by a rule above).
+   * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
+   */
+  /* Tables
+     ========================================================================== */
+  /**
+   * Remove most spacing between table cells.
+   */
+}
+/* line 20, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_reset.scss */
+.spiralNote .main {
+  margin: 0;
+}
+/* line 42, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_reset.scss */
+.spiralNote article,
+.spiralNote aside,
+.spiralNote details,
+.spiralNote figcaption,
+.spiralNote figure,
+.spiralNote footer,
+.spiralNote header,
+.spiralNote hgroup,
+.spiralNote main,
+.spiralNote nav,
+.spiralNote section,
+.spiralNote summary {
+  display: block;
+}
+/* line 54, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_reset.scss */
+.spiralNote audio,
+.spiralNote canvas,
+.spiralNote progress,
+.spiralNote video {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */
+}
+/* line 64, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_reset.scss */
+.spiralNote audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+/* line 75, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_reset.scss */
+.spiralNote [hidden],
+.spiralNote template {
+  display: none;
+}
+/* line 86, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_reset.scss */
+.spiralNote a {
+  background: transparent;
+}
+/* line 95, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_reset.scss */
+.spiralNote a:active,
+.spiralNote a:hover {
+  outline: 0;
+}
+/* line 106, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_reset.scss */
+.spiralNote abbr[title] {
+  border-bottom: 1px dotted;
+}
+/* line 115, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_reset.scss */
+.spiralNote b,
+.spiralNote strong {
+  font-weight: bold;
+}
+/* line 123, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_reset.scss */
+.spiralNote dfn {
+  font-style: italic;
+}
+/* line 132, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_reset.scss */
+.spiralNote h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+/* line 141, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_reset.scss */
+.spiralNote mark {
+  background: #ff0;
+  color: #000;
+}
+/* line 150, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_reset.scss */
+.spiralNote small {
+  font-size: 80%;
+}
+/* line 159, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_reset.scss */
+.spiralNote sub,
+.spiralNote sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+/* line 166, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_reset.scss */
+.spiralNote sup {
+  top: -0.5em;
+}
+/* line 170, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_reset.scss */
+.spiralNote sub {
+  bottom: -0.25em;
+}
+/* line 181, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_reset.scss */
+.spiralNote img {
+  border: 0;
+}
+/* line 189, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_reset.scss */
+.spiralNote svg:not(:root) {
+  overflow: hidden;
+}
+/* line 200, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_reset.scss */
+.spiralNote figure {
+  margin: 1em 40px;
+}
+/* line 208, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_reset.scss */
+.spiralNote hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+/* line 218, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_reset.scss */
+.spiralNote pre {
+  overflow: auto;
+}
+/* line 229, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_reset.scss */
+.spiralNote code,
+.spiralNote kbd,
+.spiralNote pre,
+.spiralNote samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+/* line 253, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_reset.scss */
+.spiralNote button,
+.spiralNote input,
+.spiralNote optgroup,
+.spiralNote select,
+.spiralNote textarea {
+  color: inherit;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+  margin: 0;
+  /* 3 */
+}
+/* line 263, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_reset.scss */
+.spiralNote button {
+  overflow: visible;
+}
+/* line 275, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_reset.scss */
+.spiralNote button,
+.spiralNote select {
+  text-transform: none;
+}
+/* line 290, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_reset.scss */
+.spiralNote button,
+.spiralNote html input[type="button"],
+.spiralNote input[type="reset"],
+.spiralNote input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */
+}
+/* line 300, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_reset.scss */
+.spiralNote button[disabled],
+.spiralNote html input[disabled] {
+  cursor: default;
+}
+/* line 309, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_reset.scss */
+.spiralNote button::-moz-focus-inner,
+.spiralNote input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+/* line 319, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_reset.scss */
+.spiralNote input {
+  line-height: normal;
+}
+/* line 332, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_reset.scss */
+.spiralNote input[type="checkbox"],
+.spiralNote input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+/* line 344, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_reset.scss */
+.spiralNote input[type="number"]::-webkit-inner-spin-button,
+.spiralNote input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+/* line 354, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_reset.scss */
+.spiralNote input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  /* 2 */
+  box-sizing: content-box;
+}
+/* line 368, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_reset.scss */
+.spiralNote input[type="search"]::-webkit-search-cancel-button,
+.spiralNote input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+/* line 376, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_reset.scss */
+.spiralNote fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+/* line 387, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_reset.scss */
+.spiralNote legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+/* line 396, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_reset.scss */
+.spiralNote textarea {
+  overflow: auto;
+}
+/* line 405, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_reset.scss */
+.spiralNote optgroup {
+  font-weight: bold;
+}
+/* line 416, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_reset.scss */
+.spiralNote table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* line 422, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_reset.scss */
+.spiralNote td,
+.spiralNote th {
+  padding: 0;
+}
+
+@-webkit-keyframes bounce {
+  /* line 223, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_helpers.sass */
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  /* line 225, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_helpers.sass */
+  40% {
+    -webkit-transform: translateY(-30px);
+    -moz-transform: translateY(-30px);
+    -ms-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+
+  /* line 227, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_helpers.sass */
+  60% {
+    -webkit-transform: translateY(-15px);
+    -moz-transform: translateY(-15px);
+    -ms-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+}
+
+@-moz-keyframes bounce {
+  /* line 223, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_helpers.sass */
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  /* line 225, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_helpers.sass */
+  40% {
+    -webkit-transform: translateY(-30px);
+    -moz-transform: translateY(-30px);
+    -ms-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+
+  /* line 227, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_helpers.sass */
+  60% {
+    -webkit-transform: translateY(-15px);
+    -moz-transform: translateY(-15px);
+    -ms-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes bounce {
+  /* line 223, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_helpers.sass */
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  /* line 225, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_helpers.sass */
+  40% {
+    -webkit-transform: translateY(-30px);
+    -moz-transform: translateY(-30px);
+    -ms-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+
+  /* line 227, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_helpers.sass */
+  60% {
+    -webkit-transform: translateY(-15px);
+    -moz-transform: translateY(-15px);
+    -ms-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+}
+
+@-webkit-keyframes fadeInLeftBig {
+  /* line 235, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_helpers.sass */
+  0% {
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  /* line 238, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_helpers.sass */
+  100% {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadeInLeftBig {
+  /* line 235, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_helpers.sass */
+  0% {
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  /* line 238, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_helpers.sass */
+  100% {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInLeftBig {
+  /* line 235, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_helpers.sass */
+  0% {
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  /* line 238, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_helpers.sass */
+  100% {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes flash {
+  /* line 245, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_helpers.sass */
+  0%, 50%, 100% {
+    opacity: 1;
+  }
+
+  /* line 247, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_helpers.sass */
+  25%, 75% {
+    opacity: 0;
+  }
+}
+
+@-moz-keyframes flash {
+  /* line 245, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_helpers.sass */
+  0%, 50%, 100% {
+    opacity: 1;
+  }
+
+  /* line 247, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_helpers.sass */
+  25%, 75% {
+    opacity: 0;
+  }
+}
+
+@keyframes flash {
+  /* line 245, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_helpers.sass */
+  0%, 50%, 100% {
+    opacity: 1;
+  }
+
+  /* line 247, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_helpers.sass */
+  25%, 75% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes flashPartial {
+  /* line 253, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_helpers.sass */
+  0%, 50%, 100% {
+    opacity: 1;
+  }
+
+  /* line 255, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_helpers.sass */
+  25%, 75% {
+    opacity: 0.5;
+  }
+}
+
+@-moz-keyframes flashPartial {
+  /* line 253, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_helpers.sass */
+  0%, 50%, 100% {
+    opacity: 1;
+  }
+
+  /* line 255, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_helpers.sass */
+  25%, 75% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes flashPartial {
+  /* line 253, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_helpers.sass */
+  0%, 50%, 100% {
+    opacity: 1;
+  }
+
+  /* line 255, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_helpers.sass */
+  25%, 75% {
+    opacity: 0.5;
+  }
+}
+
+@-webkit-keyframes tada {
+  /* line 261, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_helpers.sass */
+  0% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  /* line 263, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_helpers.sass */
+  10%, 20% {
+    -webkit-transform: scale(0.9) rotate(-3deg);
+    -moz-transform: scale(0.9) rotate(-3deg);
+    -ms-transform: scale(0.9) rotate(-3deg);
+    transform: scale(0.9) rotate(-3deg);
+  }
+
+  /* line 265, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_helpers.sass */
+  30%, 50%, 70%, 90% {
+    -webkit-transform: scale(1.1) rotate(3deg);
+    -moz-transform: scale(1.1) rotate(3deg);
+    -ms-transform: scale(1.1) rotate(3deg);
+    transform: scale(1.1) rotate(3deg);
+  }
+
+  /* line 267, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_helpers.sass */
+  40%, 60%, 80% {
+    -webkit-transform: scale(1.1) rotate(-3deg);
+    -moz-transform: scale(1.1) rotate(-3deg);
+    -ms-transform: scale(1.1) rotate(-3deg);
+    transform: scale(1.1) rotate(-3deg);
+  }
+
+  /* line 269, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_helpers.sass */
+  100% {
+    -webkit-transform: scale(1) rotate(0);
+    -moz-transform: scale(1) rotate(0);
+    -ms-transform: scale(1) rotate(0);
+    transform: scale(1) rotate(0);
+  }
+}
+
+@-moz-keyframes tada {
+  /* line 261, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_helpers.sass */
+  0% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  /* line 263, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_helpers.sass */
+  10%, 20% {
+    -webkit-transform: scale(0.9) rotate(-3deg);
+    -moz-transform: scale(0.9) rotate(-3deg);
+    -ms-transform: scale(0.9) rotate(-3deg);
+    transform: scale(0.9) rotate(-3deg);
+  }
+
+  /* line 265, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_helpers.sass */
+  30%, 50%, 70%, 90% {
+    -webkit-transform: scale(1.1) rotate(3deg);
+    -moz-transform: scale(1.1) rotate(3deg);
+    -ms-transform: scale(1.1) rotate(3deg);
+    transform: scale(1.1) rotate(3deg);
+  }
+
+  /* line 267, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_helpers.sass */
+  40%, 60%, 80% {
+    -webkit-transform: scale(1.1) rotate(-3deg);
+    -moz-transform: scale(1.1) rotate(-3deg);
+    -ms-transform: scale(1.1) rotate(-3deg);
+    transform: scale(1.1) rotate(-3deg);
+  }
+
+  /* line 269, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_helpers.sass */
+  100% {
+    -webkit-transform: scale(1) rotate(0);
+    -moz-transform: scale(1) rotate(0);
+    -ms-transform: scale(1) rotate(0);
+    transform: scale(1) rotate(0);
+  }
+}
+
+@keyframes tada {
+  /* line 261, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_helpers.sass */
+  0% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  /* line 263, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_helpers.sass */
+  10%, 20% {
+    -webkit-transform: scale(0.9) rotate(-3deg);
+    -moz-transform: scale(0.9) rotate(-3deg);
+    -ms-transform: scale(0.9) rotate(-3deg);
+    transform: scale(0.9) rotate(-3deg);
+  }
+
+  /* line 265, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_helpers.sass */
+  30%, 50%, 70%, 90% {
+    -webkit-transform: scale(1.1) rotate(3deg);
+    -moz-transform: scale(1.1) rotate(3deg);
+    -ms-transform: scale(1.1) rotate(3deg);
+    transform: scale(1.1) rotate(3deg);
+  }
+
+  /* line 267, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_helpers.sass */
+  40%, 60%, 80% {
+    -webkit-transform: scale(1.1) rotate(-3deg);
+    -moz-transform: scale(1.1) rotate(-3deg);
+    -ms-transform: scale(1.1) rotate(-3deg);
+    transform: scale(1.1) rotate(-3deg);
+  }
+
+  /* line 269, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_helpers.sass */
+  100% {
+    -webkit-transform: scale(1) rotate(0);
+    -moz-transform: scale(1) rotate(0);
+    -ms-transform: scale(1) rotate(0);
+    transform: scale(1) rotate(0);
+  }
+}
+
+/* line 10, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_tools.sass */
+.spiral-note .boxSizing {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 16, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_tools.sass */
+.spiral-note .cardReset {
+  background: none;
+  box-shadow: none;
+  padding: 0;
+}
+/* line 23, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_tools.sass */
+.spiral-note .debug {
+  background-color: pink !important;
+}
+/* line 28, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_tools.sass */
+.spiral-note .ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/* line 35, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_tools.sass */
+.spiral-note .fauxHide {
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+/* line 43, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_tools.sass */
+.spiral-note .fauxShow {
+  height: auto;
+  opacity: 1;
+  overflow: visible;
+  visibility: visible;
+}
+/* line 51, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_tools.sass */
+.spiral-note .group::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+/* line 68, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_tools.sass */
+.spiral-note .ir {
+  background-color: transparent;
+  border: 0;
+  overflow: hidden;
+}
+/* line 72, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_tools.sass */
+.spiral-note .ir::before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 150%;
+}
+/* line 80, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_tools.sass */
+.spiral-note .middle {
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  left: 50%;
+  position: absolute;
+  top: 50%;
+}
+/* line 88, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_tools.sass */
+.spiral-note .srt {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+/* line 100, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_tools.sass */
+.spiral-note .stretch {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+/* line 109, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_tools.sass */
+.spiral-note .valign {
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  position: relative;
+  top: 50%;
+}
+/* line 159, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_tools.sass */
+.spiral-note .db {
+  display: block;
+}
+/* line 161, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_tools.sass */
+.spiral-note .di {
+  display: inline;
+}
+/* line 163, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_tools.sass */
+.spiral-note .dib {
+  display: inline-block;
+}
+/* line 165, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_tools.sass */
+.spiral-note .dn {
+  display: none;
+}
+/* line 172, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_tools.sass */
+.spiral-note .lr {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+/* line 205, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_tools.sass */
+.spiral-note .mhc {
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 319, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_tools.sass */
+.spiral-note .fl {
+  float: left;
+}
+/* line 321, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_tools.sass */
+.spiral-note .fr {
+  float: right;
+}
+/* line 323, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_tools.sass */
+.spiral-note .fn {
+  float: none;
+}
+/* line 326, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_tools.sass */
+.spiral-note .poa {
+  position: absolute;
+}
+/* line 328, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_tools.sass */
+.spiral-note .pof {
+  position: fixed;
+}
+/* line 330, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_tools.sass */
+.spiral-note .por {
+  position: relative;
+}
+/* line 332, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_tools.sass */
+.spiral-note .pos {
+  position: static;
+}
+/* line 335, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_tools.sass */
+.spiral-note .potf {
+  top: 0;
+}
+/* line 337, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_tools.sass */
+.spiral-note .porf {
+  right: 0;
+}
+/* line 339, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_tools.sass */
+.spiral-note .pobf {
+  bottom: 0;
+}
+/* line 341, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_tools.sass */
+.spiral-note .polf {
+  left: 0;
+}
+/* line 366, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_tools.sass */
+.spiral-note .tac {
+  text-align: center;
+}
+/* line 368, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_tools.sass */
+.spiral-note .tal {
+  text-align: left;
+}
+/* line 370, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_tools.sass */
+.spiral-note .tar {
+  text-align: right;
+}
+/* line 412, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_tools.sass */
+.spiral-note .tsi {
+  font-style: italic;
+}
+/* line 414, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_tools.sass */
+.spiral-note .tsn {
+  font-style: normal;
+}
+/* line 419, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_tools.sass */
+.spiral-note .ttu {
+  text-transform: uppercase;
+}
+/* line 424, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_tools.sass */
+.spiral-note .twn {
+  font-weight: normal;
+}
+/* line 426, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_tools.sass */
+.spiral-note .twb {
+  font-weight: bold;
+}
+
+/* line 8, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_base.sass */
+.spiralNote {
+  background: #f6f7f7;
+  color: #585a5b;
+  font-size: 16px;
+  font-family: "OpenSansRegular", "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.5;
+}
+/* line 15, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_base.sass */
+.spiralNote .main {
+  font-size: 100%;
+  min-width: 48em;
+}
+/* line 19, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_base.sass */
+.spiralNote iframe {
+  border: 0;
+  height: 100%;
+  width: 100%;
+}
+/* line 28, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_base.sass */
+.spiralNote ul, .spiralNote ol, .spiralNote dl, .spiralNote p {
+  margin-bottom: 1.25em;
+  margin-top: 0;
+}
+/* line 32, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_base.sass */
+.spiralNote dd, .spiralNote dt {
+  margin: 0;
+}
+/* line 35, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_base.sass */
+.spiralNote li {
+  margin-bottom: 0.625em;
+  margin-top: 0;
+}
+/* line 39, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_base.sass */
+.spiralNote pre, .spiralNote code {
+  font-family: Monaco, monospace;
+}
+/* line 44, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_base.sass */
+.spiralNote h1, .spiralNote .h1,
+.spiralNote h2, .spiralNote .h2,
+.spiralNote h3, .spiralNote .h3,
+.spiralNote h4, .spiralNote .h4 {
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 0.625em;
+  margin-top: 0;
+}
+/* line 53, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_base.sass */
+.spiralNote h1, .spiralNote .h1 {
+  font-size: 200%;
+}
+/* line 56, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_base.sass */
+.spiralNote h2, .spiralNote .h2 {
+  font-size: 150%;
+}
+/* line 59, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_base.sass */
+.spiralNote h3, .spiralNote .h3 {
+  font-size: 130%;
+}
+/* line 62, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_base.sass */
+.spiralNote h4, .spiralNote .h4 {
+  font-size: 115%;
+}
+/* line 71, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_base.sass */
+.spiralNote a {
+  border-bottom: 1px solid #278998;
+  color: #278998;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+}
+/* line 77, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/foundation/_base.sass */
+.spiralNote a:hover, .spiralNote a:focus {
+  border-color: #585a5b;
+  color: #585a5b;
+}
+
+/* line 1, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/modules/_spiralNote.sass */
+.spiralNote {
+  width: 100%;
+}
+/* line 3, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/modules/_spiralNote.sass */
+.spiralNote .main {
+  position: relative;
+  height: 500px;
+}
+/* line 6, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/modules/_spiralNote.sass */
+.spiralNote .spiralNote--sidebar {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 15%;
+  margin: 0;
+  padding: 0;
+}
+/* line 15, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/modules/_spiralNote.sass */
+.spiralNote .spiralNote--rightPane {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 82.66667%;
+  margin: 0;
+  padding: 0;
+}
+/* line 24, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/modules/_spiralNote.sass */
+.spiralNote .spiralNote--bottomPane {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 1, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/modules/_treeView.sass */
+.sn-treeview {
+  width: 100%;
+  overflow: auto;
+  border: 1px solid #dddddd;
+  background-color: #eeeeee;
+  padding: 5px 10px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+/* line 10, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/modules/_treeView.sass */
+.sn-treeview ul {
+  padding: 0;
+  margin: 0;
+}
+/* line 13, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/modules/_treeView.sass */
+.sn-treeview li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  line-height: 17px;
+}
+/* line 18, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/modules/_treeView.sass */
+.sn-treeview li .sn-treeView--selectOverlay {
+  height: 19px;
+  background-color: #dddddd;
+  position: absolute;
+  z-index: 0;
+  left: 0;
+  right: 0;
+}
+/* line 25, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/modules/_treeView.sass */
+.sn-treeview li > a {
+  position: relative;
+}
+/* line 29, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/modules/_treeView.sass */
+.sn-treeview > ul ul {
+  padding-left: 15px;
+}
+/* line 32, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/modules/_treeView.sass */
+.sn-treeview a {
+  color: #666666;
+  text-decoration: none;
+  border: none;
+  font-size: 13px;
+}
+/* line 37, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/modules/_treeView.sass */
+.sn-treeview h3 {
+  margin: 0;
+  line-height: 17px;
+}
+
+/* line 2, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/modules/_fileDisplay.sass */
+.sn-fileDisplay .sn-fileDisplay--tabList {
+  padding: 0;
+  margin: 0 0 0 2px;
+  border-bottom: 1px solid #aaaaaa;
+}
+/* line 6, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/modules/_fileDisplay.sass */
+.sn-fileDisplay .sn-fileDisplay--tabList .sn-fileDisplay--tab {
+  display: inline-block;
+  list-style: "none";
+  margin: 0;
+  padding: 0;
+  background-color: #ddd;
+  border: 1px solid #dddddd;
+}
+/* line 13, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/modules/_fileDisplay.sass */
+.sn-fileDisplay .sn-fileDisplay--tabList .sn-fileDisplay--tab.is-selected {
+  background-color: #fff;
+}
+/* line 15, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/modules/_fileDisplay.sass */
+.sn-fileDisplay .sn-fileDisplay--tabList .sn-fileDisplay--tab a {
+  color: #666666;
+  display: inline-block;
+  text-decoration: none;
+  border: none;
+}
+/* line 20, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/modules/_fileDisplay.sass */
+.sn-fileDisplay .sn-fileDisplay--tabList .sn-fileDisplay--tab a:first-child {
+  padding: 5px 5px 5px 10px;
+}
+/* line 22, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/modules/_fileDisplay.sass */
+.sn-fileDisplay .sn-fileDisplay--tabList .sn-fileDisplay--tab a:last-child {
+  padding: 5px 10px 5px 0;
+}
+/* line 25, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/modules/_fileDisplay.sass */
+.sn-fileDisplay .sn-fileBuffer {
+  position: absolute;
+  top: 35px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  background: white;
+  border: 1px solid #eeeeee;
+}
+/* line 34, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/modules/_fileDisplay.sass */
+.sn-fileDisplay .sn-fileBuffer .bg-overlay {
+  width: 28px;
+  background-color: #f7f7f7;
+  border-right: 1px solid #dddddd;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+/* line 41, /Users/adam/Dropbox/code/research/SpiralNote-client/app/assets/stylesheets/spiralNote/modules/_fileDisplay.sass */
+.sn-fileDisplay .sn-fileBuffer .CodeMirror {
+  height: auto;
+}
+

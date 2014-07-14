@@ -1,0 +1,11 @@
+<li class='sn-treeView--{{file.type}}'>
+  <div class='sn-treeView--selectOverlay' ng-if='file.selected'></div>
+  <a href='' ng-click="itemClicked(file)">
+    <spiral-tree-icon file='file'></spiral-tree-icon>
+    {{file.name}}
+  </a>
+
+  <ul ng-if='file.files && file.files.length > 0' ng-show='file.expanded'>
+    <spiral-tree ng-repeat='file in file.files' file='file'></spiral-tree>
+  </ul>
+</li>
