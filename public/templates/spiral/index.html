@@ -1,40 +1,45 @@
-<div class='spiralNote'>
+<div ng-app='spiral'>
+  <div class='row spiral-files'>
+    <div class='col-sm-4 col-md-3 col-lg-3'>
+      <edit-in-place value='workspace.name' class='spiral-title'></edit-in-place>
 
-  <h1>{{workspace.name}}</h1>
-
-  <div>
-    <button ng-click='save()'>Save Workspace</button>
-    <input ng-model='workspace.name' placeholder='Workspace name' />
-  </div>
-
-  <div class='main'>
-    <div class='spiralNote--sidebar'>
-      <div class='sn-treeview'>
-        <ul>
+      <div class='spiral-tree-wrapper'>
+        <ul class='spiral-tree'>
           <spiral-tree ng-repeat='file in workspace.files' file='file'></spiral-tree>
         </ul>
+        <div style='display:none;'>
+          <button class='btn btn-success btn-xs fa fa-file-text-o'>New File</button>
+          <button class='btn btn-danger btn-xs fa fa-trash-o'>Remove File</button>
+        </div>
+      </div>
+
+
+      <div class='spiral-recordings'>
+        <ul>
+          <spiral-recorder-recording ng-repeat='recording in workspace.recordings' recording='recording'></spiral-recorder-recording>
+        <ul>
       </div>
     </div>
 
-    <div class='spiralNote--rightPane'>
-      <div class="sn-fileDisplay">
-        <div class='sn-fileDisplay--tabs'>
-          <ul class='sn-fileDisplay--tabList'>
+    <div class='col-sm-8 col-md-9 col-lg-9'>
+      <div>
+        <div>
+          <ul class='spiral-editor-tabs nav nav-tabs' role='tablist' ng-show='openFiles.length > 0'>
             <spiral-editor-tab ng-repeat='file in openFiles' file='file'></spiral-editor-tab>
           </ul>
         </div>
 
-        <div class="sn-fileDisplay--views">
-          <spiral-editor-content ng-repeat='file in activeFiles' ng-if='file' file='file'></spiral-editor-content>
+        <div class='spiral-editor-content'>
+          <spiral-editor-content ng-repeat='file in activeFiles' file='file'></spiral-editor-content>
         </div>
-        
       </div>
     </div>
   </div>
 
-  <spiral-recorder-new workspace='workspace'></spiral-recorder-new>
-
-  <ul>
-    <spiral-recorder-recording ng-repeat='recording in workspace.recordings' recording='recording'></spiral-recorder-recording>
-  <ul>
+  <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+    <div class="container">
+      <spiral-recorder-new workspace='workspace' class='col-sm-9 col-sm-offset-3'></spiral-recorder-new>
+      <button class='btn btn-default save-workspace fa fa-save' ng-click='save()'>Save Workspace</button>
+    </div>
+  </nav>
 </div>

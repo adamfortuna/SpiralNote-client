@@ -40355,6 +40355,45 @@ angular.module('spiral', [
   'ngEventEmitter'
 ]);
 
+angular.module('spiral').directive('editInPlace', function() {
+  return {
+    restrict: 'E',
+    scope: {
+      value: '='
+    },
+    template: '<span ng-click="edit()" ng-bind="value"></span><input ng-model="value"></input>',
+    link: function ( $scope, element, attrs ) {
+      // Let's get a reference to the input element, as we'll want to reference it.
+      var inputElement = angular.element( element.children()[1] );
+      
+      // This directive should have a set class so we can style it.
+      element.addClass( 'edit-in-place' );
+      
+      // Initially, we're not editing.
+      $scope.editing = false;
+      
+      // ng-click handler to activate edit-in-place
+      $scope.edit = function () {
+        $scope.editing = true;
+        
+        // We control display through a class on the directive itself. See the CSS.
+        element.addClass( 'active' );
+        
+        // And we must focus the element. 
+        // `angular.element()` provides a chainable array, like jQuery so to access a native DOM function, 
+        // we have to reference the first element in the array.
+        inputElement[0].focus();
+      };
+      
+      // When we leave the input, we're done editing.
+      inputElement.prop( 'onblur', function() {
+        $scope.editing = false;
+        element.removeClass( 'active' );
+      });
+    }
+  };
+});
+
 angular.module('spiral').directive('spiral', ['WorkspaceManager', 'FileService', function(WorkspaceManager, FileService) {
   return {
     replace: true,
@@ -40556,15 +40595,15 @@ angular.module('spiral').factory('FileScaffold', ['guid', function (guid) {
   return function() {
     return [
       { "type": "directory", "name": "Demo", "uid": guid(), "expanded": true, "files": [
-          { "type": "directory", "name": "javascripts", "uid": guid(), "files": [
+          { "type": "directory", "name": "javascripts", "uid": guid(), "expanded": true, "files": [
               { "type": "file", "name": "application.js", "uid": guid(), "contents": "var test=true;", "syntax": "javascript" }
             ]
           },
-          { "type": "directory", "name": "stylesheets", "uid": guid(), "files": [
+          { "type": "directory", "name": "stylesheets", "uid": guid(), "expanded": true, "files": [
               { "type": "file", "name": "application.css", "uid": guid(), "contents": "body {\n\n}", "syntax": "css" }
             ]
           },
-          { "type": "file", "name": "index.html", "uid": guid(), "syntax": "html", "contents": "<html>\n</html>" }
+          { "type": "file", "name": "index.html", "uid": guid(), "syntax": "html", "contents": "<html>\n</html>", "open": true, "active": true }
         ]
       }
     ];
@@ -40893,11 +40932,13 @@ angular.module('spiral:editor').directive('spiralEditorContent', ['FileService',
     },
     templateUrl: 'templates/spiral/editor/content.html',
     link: function(scope, element, attrs) {
+      console.log('Setting up editor for file ' + scope.file.name + ', uid: ' + scope.file.uid);
       var editor = CodeMirror.fromTextArea(element.find("textarea")[0], {
         tabSize: 2,
         lineNumbers: true,
         autofocus: false,
-        mode: FileService.syntax(scope.file)
+        mode: FileService.syntax(scope.file),
+        theme: 'vibrant-ink'
       });
       FileService.setEditor(editor, scope.file);
     }
@@ -41025,7 +41066,7 @@ angular.module('spiral:recorder').directive('spiralRecorderRecord', ['SpiralReco
       "workspace": "=",
       "recording": "="
     },
-    template: '<button ng-click="toggleRecord()"><span ng-show="record.isRecording">Stop</span><span ng-hide="record.isRecording">Start</span> Recording</button>',
+    template: '<button class="btn btn-default" ng-click="toggleRecord()"><span ng-show="record.isRecording">Stop</span><span ng-hide="record.isRecording">Start</span> Recording</button>',
     controller: function($scope) {
       $scope.record = {};
       $scope.toggleRecord = function() {

@@ -1,0 +1,121 @@
+html, body, .row, #editors, .tab-content {
+  height: 100%;
+}
+
+body {
+  background-color: #2b2b2b;
+  color: #eee;
+  margin-top: 20px;
+}
+
+.save-workspace { float: right; }
+
+/* Title */
+.spiral-title span {
+  font-size: 180%;
+  padding: 3px 0;
+  display: block;
+}
+.spiral-title input {
+  color: #333;
+  font-size: 180%;
+}
+
+/* Files */
+.spiral-files, .spiral-files .spiral-tree {
+  min-height: 500px;
+  margin-bottom: 20px;
+}
+
+/* Tree */
+.spiral-tree {
+  font-size: 1.2em;
+}
+.spiral-tree a {
+  color: #ddd;
+  text-decoration: none;
+}
+.spiral-tree, .spiral-tree ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.spiral-tree li {
+  padding: 0;
+}
+.spiral-tree li li {
+  padding-left: 25px;
+}
+
+
+/* Editor Tabs */
+.nav-tabs:first-child {
+  padding-left: 43px;
+}
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+  color: #e6e6e6;
+  text-shadow: 0px -1px #232323;
+  background-color: #2b2b2b;
+  font-size: 1.2em;
+}
+
+.nav-tabs > li > a, .nav-tabs > li > a:hover {
+  color: #ddd;
+  background-color: #2b2b2b;
+  border-bottom: none;
+  font-size: 1.2em;
+}
+
+
+.spiral-editor-tabs a, .spiral-editor-tabs a span {
+  cursor: pointer;
+}
+
+
+/* Editor Content */
+.spiral-editor-content {
+  font-size: 140%;
+  min-height: 100%;
+  margin-bottom: -40px;
+}
+
+
+
+.fa-save:before, .fa-floppy-o:before {
+  padding-right: 10px;
+}
+
+.fa-trash-o:before, .fa-file-text-o:before {
+padding-right: 8px;
+}
+
+
+
+
+.CodeMirror {
+  background-color: #2b2b2b;
+  font-size: 125%;
+  height: auto;
+  border-left: 1px solid #eee;
+  margin-left: -1px;
+}
+.CodeMirror-lines {
+  line-height: 32px;
+}
+.CodeMirror-lines .highlight {
+  background: #FFFA75;
+}
+.CodeMirror-foldgutter {
+  width: .7em;
+}
+.CodeMirror-foldgutter-open,
+.CodeMirror-foldgutter-folded {
+  color: #aaa;
+  cursor: pointer;
+}
+.CodeMirror-foldgutter-open:after {
+  content: "\25BE";
+}
+.CodeMirror-foldgutter-folded:after {
+  content: "\25B8";
+}

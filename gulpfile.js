@@ -18,20 +18,34 @@ var paths = {
     'bower_components/codemirror/mode/javascript/javascript.js',
     'bower_components/codemirror/mode/css/css.js',
     'bower_components/codemirror/mode/htmlmixed/htmlmixed.js',
-    'src/javascripts/**/*.js']
+    'src/javascripts/**/*.js'],
+  stylesheets: [
+    'bower_components/bootstrap/dist/css/bootstrap.css',
+    'bower_components/font-awesome-bower/css/font-awesome.css',
+    'bower_components/codemirror/lib/codemirror.css',
+    'src/stylesheets/**/*.css'
+  ]
 };
 
 
 gulp.task('process-scripts', function() {
   gulp.src(paths.scripts)
     .pipe(concat('application.js'))
-    // .pipe(uglify())
     .pipe(gulp.dest('public/'))
     .pipe(rename({suffix: '.min'}));
 });
 
 
+gulp.task('process-css', function() {
+  gulp.src(paths.stylesheets)
+    .pipe(concat('application.css'))
+    .pipe(gulp.dest('public/stylesheets/'))
+    .pipe(rename({suffix: '.min'}));
+});
+
+
+
 
 gulp.task('watch', function() {
-  gulp.watch(paths.scripts, ['process-scripts']);
+  gulp.watch([paths.scripts,paths.stylesheets], ['process-scripts', 'process-css']);
 });

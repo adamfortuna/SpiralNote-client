@@ -1,6 +1,9 @@
-<li class='sn-fileDisplay--tab' ng-class="{'is-selected': file.active}">
-  <a href='' ng-click='activate(file)'>{{file.name}}</a>
-  <a href='' ng-click='close(file)'>
-    <i class='fa fa-times-circle-o'></i>
+<li ng-class="{'active': file.active}">
+  <a ng-click='activate(file)'>
+    {{file.name}}
+
+    <span ng-click='close(file)'>
+      <i class='fa fa-times-circle-o'></i>
+    </span>
   </a>
 </li>

@@ -6,7 +6,7 @@ angular.module('spiral:recorder').directive('spiralRecorderRecord', ['SpiralReco
       "workspace": "=",
       "recording": "="
     },
-    template: '<button ng-click="toggleRecord()"><span ng-show="record.isRecording">Stop</span><span ng-hide="record.isRecording">Start</span> Recording</button>',
+    template: '<button class="btn btn-default" ng-click="toggleRecord()"><span ng-show="record.isRecording">Stop</span><span ng-hide="record.isRecording">Start</span> Recording</button>',
     controller: function($scope) {
       $scope.record = {};
       $scope.toggleRecord = function() {
